@@ -118,7 +118,7 @@ header .right{
 }
 
 .main-block{
-    padding-top: 70px;
+    padding: 70px 0;
 }
 
 .about{
@@ -159,14 +159,14 @@ header .right{
     font-size: 16px;
 }
 
-ol {
+.about ol {
 	list-style-type: none; 
 	counter-reset: num;
 	margin: 0 0 0 40px;
 	padding: 15px 0 5px 0;
 	font-size: 16px;
 }
-ol li {
+.about ol li {
 	position: relative;	
 	margin: 0 0 0 0;
 	padding: 0 0 30px 0;
@@ -175,7 +175,7 @@ ol li {
     line-height: 1.35;
     width: 80%;
 }
-ol li:before {
+.about ol li:before {
 	content: counter(num); 
 	counter-increment: num;
 	display: inline-block;
@@ -245,10 +245,14 @@ ol li:before {
     font-size: 24px !important;
     font-weight: 500;
     height: 100px;
+    border-bottom: 2px solid #000 !important;
+}
+
+.accordion-button.collapsed{
+    border-bottom: none !important;
 }
 
 .accordion-button:focus{
-    border: none !important;
     box-shadow: none !important;
     background-color: #fff !important;
     color: #000 !important;
@@ -378,4 +382,119 @@ ol li:before {
 
 .btn-new.hover-filled-slide-left:hover::before {
   width: 0%;
+}
+
+.how-works h1{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 28px;
+    line-height: 1.23;
+    font-weight: 600;
+}
+
+.how-works div{
+    margin-left: 200px;
+}
+
+.how-works ol {
+	list-style-type: none; 
+	counter-reset: num;
+	margin: 0 0 0 40px;
+	padding: 15px 0 5px 0;
+	font-size: 16px;
+    margin-left: 100px;
+}
+.how-works ol li {
+	position: relative;	
+	margin: 0 0 0 0;
+	padding: 0 0 30px 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.35;
+    width: 500px;
+}
+
+.how-works ol li h1{
+    text-align: left !important;
+    margin-bottom: 10px;
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.how-works ol li p{
+    line-height: 1.55;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.how-works ol li:before {
+	content: counter(num); 
+	counter-increment: num;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: -50px;
+	width: 34px;
+	height: 34px;
+	background: #fff;
+	color: #ffffff;
+	text-align: center;
+	line-height: 30px;
+	font-size: 18px;
+	border-radius: 50%;
+	border: 2px solid #1c36ff;
+    background-color: #1c36ff;
+}
+
+.partners-block{
+    background-color: #eceeff;
+    padding: 70px 100px;
+}
+
+.partners-block h1{
+    text-align: center;
+    font-size: 42px;
+    line-height: 1.23;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.partners-block li{
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin: 1rem 5rem;
+}
+
+.partners-block img{
+    max-height: 150px;
+    max-width: 200px;
+}
+
+footer{
+    background-color: #000;
+    color:#fff;
+}
+
+footer h1{
+    font-size: 38px;
+    font-weight: 500;
+}
+
+footer p{
+    font-size: 16px;
+}
+
+footer svg{
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+}
+
+footer li{
+    display: flex;
+    align-items: center;
+    margin: 2rem 5rem;
 }
