@@ -498,3 +498,239 @@ footer li{
     align-items: center;
     margin: 2rem 5rem;
 }
+
+
+.accordion-body a{
+    text-decoration: none;
+    color: #000 !important;
+}
+
+.head-block{
+    background-color: rgba(24, 24, 24, 0.7);
+    background-blend-mode: multiply;
+    background-image: url('../media/industrial-metal-dri.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -200px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.course-block{
+    margin-top: 4%;
+    margin-left: 15%;
+    /* position: absolute; */
+}
+
+.course-block h1{
+    font-size: 66px;
+}
+
+.course-block p{
+    width: 850px;
+}
+
+.course-block .info a{
+    display:inline;
+    display:inline-block;
+    margin-right: 30px;
+}
+
+.outline-btn {
+    background-color: transparent !important;
+    border: solid 3px #fff !important;
+}
+
+.outline-btn:hover{
+    background-color: #fff !important;
+}
+
+.course-info p{
+    font-weight: 700;
+    margin-top: -13px;
+}
+
+.main-course-block{
+    margin:auto;
+    display: block;
+    background-color: #fff;
+}
+
+.main-course-block h1{
+    margin-top: 80px;
+    /* margin-left: 185px; */
+}
+
+.info-list{
+    list-style-type: none;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.info-list ul li{
+    margin-top: 60px;
+    margin-left: 0px;
+    margin-right: 150px;
+    padding-left: 0;
+    /* display: inline-block; */
+    width: 20%;
+}
+
+.circle{
+    height: 40px;
+    width: 40px;
+    background-color: #3043CD;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 1px;
+    display:inline-block
+}
+
+.course-info-block{
+    display:inline-block;
+    /* margin-top: 40px; */
+}
+
+.circle p{
+    font-size: 24px;
+    color: #fff;
+    /* margin-left: -1px; */
+}
+
+.course-info-title p{
+    font-weight: 600;
+    font-size: 26px;
+    padding-left: 30px;
+}
+
+.course-description{
+    width: 40vh;
+    margin-left: 45px;
+}
+
+.course-description p{
+    font-size: 20px;
+    padding-left: 30px;
+    font-weight: 300;
+}
+
+.box-shadow{
+    -webkit-box-shadow: 0px 5px 10px 4px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 4px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 4px rgba(34, 60, 80, 0.2);
+}
+
+.course-program{
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 1px 30px;
+    /* padding-top: 12px; */
+    padding-bottom: 40px;
+}
+
+.course-program h1{
+    text-align: center;
+    /* margin-left: 0px !important; */
+    margin-top: 30px !important;
+}
+
+.course-program ul{
+    list-style-type: none;
+}
+
+.course-program ul li{
+    /* margin: 0 !important; */
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.course-program ul li b{
+    font-weight: 500;
+}
+
+.lectors h1{
+    text-align: center;
+}
+
+.lectors ul{
+    list-style-type: none;
+}
+
+.lectors ul li{
+    width: 20%;
+}
+
+.lector-name p{
+    font-weight: 600;
+    font-size: 26px;
+    margin-top: 120px;
+    text-align: center;
+}
+
+.lector-description p{
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.course-achivments-title{
+    text-align: center;
+}
+
+.registration{
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+} 
+
+.registration label{
+    font-weight: 300;
+}
+
+.registration h1{
+    text-align: center;
+}
+
+.registration p{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.input{
+    margin-bottom: 20px;
+}
+
+.registration input,
+.registration select
+{
+    /* width: 450px; */
+    height: 45px;
+}
+
+.registration label{
+    font-size: 22px;
+}
+
+.registration form input[type="date"]{
+    width: 200px;
+}
+
+.registration form input[type="number"]{
+    width: 100px;
+}
+
+.registration input[type="submit"]{
+    border-radius: 2rem !important;
+    width: 150px;
+}
+
+.registration .privacy{
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 20px;
+}
