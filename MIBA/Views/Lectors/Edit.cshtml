@@ -1,0 +1,51 @@
+﻿@model Lectors
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+        <li>
+            <a asp-controller="Home" asp-action="Index" type="submit">Главная</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Index" type="submit">Все таблицы</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Logout" type="submit">Выйти</a>
+        </li>
+    </ul>
+</div>
+
+<form class="edit-form" method="post" asp-action="Edit" enctype="multipart/form-data">
+    <div class="row pb-2">
+        <h2 class="text-primary">Редактирование лектора</h2>
+        <hr />
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <span asp-validation-for="FullName" class="details">ФИО</span>
+            <input asp-for="FullName" name="FullName" placeholder="ФИО" required>
+        </div>
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <span asp-validation-for="About" class="details">Информация</span>
+            <textarea asp-for="About" class="brief-textarea" name="BriefDescription" type="text" required></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:200px">Изменить</button>
+    <a asp-controller="Lectors" asp-action="Index" class="btn btn-secondary" style="width:200px">Вернуться</a>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }

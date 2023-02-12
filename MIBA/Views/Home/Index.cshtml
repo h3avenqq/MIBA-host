@@ -1,0 +1,157 @@
+﻿@model IEnumerable<StudyCategories>
+
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="top main-block">
+    <div class="info">
+        <h1>
+            МЕЖДУНАРОДНАЯ
+            АКАДЕМИЯ БИЗНЕСА
+            MENDELEEV
+        </h1>
+        <p>
+            Подготовка высококвалифицированных специалистов
+            с необходимыми профессиональными компетенциями
+        </p>
+
+        <a href="" class="btn btn-primary">ВСЕ КУРСЫ</a>
+
+    </div>
+    <div class="circular-arrow"></div>
+</div>
+<div id="about" class="about main-block">
+    <div>
+        <h1>ОБ АКАДЕМИИ</h1>
+        <p>Для обеспечения химической отрасли современными высококвалифицированными кадрами, в 2019 году на базе Российского химико-технологического университета имени Д.И. Менделеева учреждена Международная академия бизнеса Mendeleev</p>
+
+        <h1>ЦЕЛИ АКАДЕМИИ</h1>
+        <ul class="nav">
+            <li>
+                <h2>Подготовка</h2>
+                <p>высококвалифицированных кадров химической отрасли в условиях международной конкуренции</p>
+            </li>
+            <li>
+                <h2>Развитие</h2>
+                <p>отраслевых регионов химической промышленности путем создания инновационно-образовательных консорциумов для подготовки специалистов на базе прикладных научных исследований и технологических инноваций</p>
+            </li>
+        </ul>
+
+        <h1>МИССИЯ АКАДЕМИИ</h1>
+        <p>Создание системы опережающего развития с полным спектром услуг и сервисов, отвечающих потребностям химико-технологической отрасли в областях технологических инноваций и кадрового обеспечения</p>
+        <ol>
+            <li>Дополнительное образование для детей и взрослых</li>
+            <li>Дополнительное профессиональное образование</li>
+            <li>Дополнительное образование обучающихся университета</li>
+            <li>Выявление, поддержка и развитие способностей у детей и молодежи</li>
+            <li>Анализ кадрового запроса отрасли для удовлетворения нужд рынка</li>
+            <li>
+                Развитие сотрудничества с партнерами по вопросам непрерывного
+                образования, совместных проектов, в том числе международных
+            </li>
+        </ol>
+    </div>
+</div>
+<div id="study" class="study-branches main-block">
+    <h1>НАПРАВЛЕНИЯ ОБУЧЕНИЯ</h1>
+    <div class="for-accordion">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            @foreach(StudyCategories category in Model)
+            {
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading-@category.Id">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse-@category.Id" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            @category.Name
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapse-@category.Id" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading-@category.Id">
+                        <div class="accordion-body">
+                            @foreach (Studies course in category.Studies)
+                            {
+                                <a asp-controller="Course" asp-action="Index" asp-route-id="@course.Id">@course.Title</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="create-block main-block">
+    <h1>САМОЕ ВРЕМЯ СОЗДАВАТЬ</h1>
+    <p>Выберите готовую программу обучения, чтобы развивать свою карьеру</p>
+    <table align="center">
+        <tr>
+            <td class="first-image" rowspan="2" colspan="2"><img src="media/first.png" alt=""></td>
+            <td><img src="media/second.png" alt=""></td>
+            <td><img src="media/third.png" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="media/fourth.png" alt=""></td>
+            <td><img src="media/fifth.png" alt=""></td>
+        </tr>
+    </table>
+
+</div>
+<div class="not-found">
+    <div>
+        <h1>НЕ НАШЛИ ПОДХОДЯЩИЙ КУРС?</h1>
+        <p>Оставьте заявку на нашем сайте и мы разработаем уникальную программу под ваши бизнес-задачи, поможем выстроить технологический процесс, а также обучим технологическому процессу под задачи вашего бизнеса</p>
+        <button class="btn-new btn-1 hover-filled-slide-left">
+            <span>ОСТАВИТЬ ЗАЯВКУ</span>
+        </button>
+    </div>
+</div>
+<div class="how-works main-block">
+    <h1>Как это работает?</h1>
+    <div>
+        <ol class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li>
+                <h1>Выезжаем</h1>
+                <p>на ваше производство</p>
+            </li>
+            <li>
+                <h1>Изучаем</h1>
+                <p>бизнес-процессы, оборудование</p>
+            </li>
+            <li>
+                <h1>Выстраиваем</h1>
+                <p>технологические процессы</p>
+            </li>
+            <li>
+                <h1>Составляем</h1>
+                <p>программу обучения</p>
+            </li>
+            <li>
+                <h1>Подтверждаем</h1>
+                <p>пройденное обучение соответствующим документом</p>
+            </li>
+            <li>
+                <h1>Продемонстрируем</h1>
+                <p>результат, который получит ваш бизнес</p>
+            </li>
+        </ol>
+    </div>
+</div>
+<div id="partners" class="partners-block main-block">
+    <h1>НАШИ ПАРТНЕРЫ</h1>
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        @{
+
+            DirectoryInfo Folder;
+            FileInfo[] Images;
+
+            Folder = new DirectoryInfo("wwwroot/media/Investors");
+            Images = Folder.GetFiles();
+
+            for (int k = 0; k < Images.Length; k++)
+            {
+                @Html.Raw("<li>");
+                string image = String.Format(@"{0}/{1}", "/media/Investors", Images[k].Name);
+                @Html.Raw("<img src='" + image + "' alt='' />")
+                @Html.Raw("</li>");
+            }
+        }
+    </ul>
+</div>
