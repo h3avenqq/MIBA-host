@@ -111,17 +111,88 @@
         </ul>
     </div>
 
+    <div class="registration-container">
+        <div class="registration">
+
+            <h1>Записаться на курс</h1>
+            <p>Для физических лиц</p>
+
+            <form>
+                <div class="input">
+                    <label for="course">Название курса</label>
+                    <select class="form-control" id="course">
+                        <option>@Model.Title</option>
+                    </select>
+                </div>
+
+                <div class="input">
+                    <label for="fullname">Фамилия Имя Отчество</label>
+                    <input class="form-control" id="fullname" type="text" placeholder="Иванов Иван Иванович">
+                </div>
+
+
+                <div class="input">
+                    <label for="birthday">Дата рождения</label>
+                    <input class="form-control" id="birthday" type="date">
+                </div>
+
+                <div class="input">
+                    <label for="email">E-mail</label>
+                    <input class="form-control" id="email" type="email" placeholder="example@mail.com">
+                </div>
+
+                <div class="input">
+                    <label for="phone">Телефон</label>
+                    <input class="form-control" id="phone" type="tel" placeholder="+7 (999) 999-99-99">
+                </div>
+
+                <div class="input">
+                    <label for="add-info">Дополнительная информация</label>
+                    <textarea class="form-control" id="add-info" rows="6" placeholder=""></textarea>
+                </div>
+
+
+
+                <input type="submit" href="" class="btn btn-primary" value="ЗАПИСАТЬСЯ">
+
+                <p class="privacy">
+                    Вы даете согласие на обработку персональных данных и соглашаетесь
+                    c политикой конфиденциальности
+                </p>
+            </form>
+        </div>
+
+        <hr />
 
     <div class="registration">
 
         <h1>Записаться на курс</h1>
-        <p>Для физических лиц</p>
+        <p>Для юридических лиц</p>
 
         <form>
             <div class="input">
                 <label for="course">Название курса</label>
                 <select class="form-control" id="course">
                     <option>@Model.Title</option>
+                </select>
+            </div>
+
+            <div class="input">
+                <label for="company">Название предприятия</label>
+                <input class="form-control" id="company" type="text" placeholder="">
+            </div>
+
+            <div class="input">
+                <label for="employers">Количество сотрудников для обучения</label>
+                <input class="form-control" id="employers" type="number" placeholder="">
+            </div>
+
+            <div class="input">
+                <label for="place">Место проведения</label>
+                <select class="form-control" id="place">
+                    <option>(не установлено)</option>
+                    <option>На территории РХТУ</option>
+                    <option>На территории заказчика</option>
                 </select>
             </div>
 
@@ -161,105 +232,38 @@
             </p>
         </form>
     </div>
+        <hr />
 
+    <div class="registration">
+        <h1>Оставить отзыв</h1>
+        <form>
+
+            <div class="input">
+                <label for="fullname">Ваше имя</label>
+                <input class="form-control" id="fullname" type="text" placeholder="Иван">
+            </div>
+
+            <div class="input">
+                <label for="email">E-mail</label>
+                <input class="form-control" id="email" type="email" placeholder="example@mail.com">
+            </div>
+
+            <div class="input">
+                <label for="add-info">Отзыв</label>
+                <textarea class="form-control" id="add-info" rows="6" placeholder=""></textarea>
+            </div>
+
+
+
+            <input type="submit" href="" class="btn btn-primary" value="Отправить">
+
+            <p class="privacy">
+                Вы даете согласие на обработку персональных данных и соглашаетесь
+                c политикой конфиденциальности
+            </p>
+        </form>
+    </div>
+    </div>
 </div>
 
-
-<div class="registration">
-
-    <h1>Записаться на курс</h1>
-    <p>Для юридических лиц</p>
-
-    <form>
-        <div class="input">
-            <label for="course">Название курса</label>
-            <select class="form-control" id="course">
-                <option>@Model.Title</option>
-            </select>
-        </div>
-
-        <div class="input">
-            <label for="company">Название предприятия</label>
-            <input class="form-control" id="company" type="text" placeholder="">
-        </div>
-
-        <div class="input">
-            <label for="employers">Количество сотрудников для обучения</label>
-            <input class="form-control" id="employers" type="number" placeholder="">
-        </div>
-
-        <div class="input">
-            <label for="place">Место проведения</label>
-            <select class="form-control" id="place">
-                <option>(не установлено)</option>
-                <option>На территории РХТУ</option>
-                <option>На территории заказчика</option>
-            </select>
-        </div>
-
-        <div class="input">
-            <label for="fullname">Фамилия Имя Отчество</label>
-            <input class="form-control" id="fullname" type="text" placeholder="Иванов Иван Иванович">
-        </div>
-
-
-        <div class="input">
-            <label for="birthday">Дата рождения</label>
-            <input class="form-control" id="birthday" type="date">
-        </div>
-
-        <div class="input">
-            <label for="email">E-mail</label>
-            <input class="form-control" id="email" type="email" placeholder="example@mail.com">
-        </div>
-
-        <div class="input">
-            <label for="phone">Телефон</label>
-            <input class="form-control" id="phone" type="tel" placeholder="+7 (999) 999-99-99">
-        </div>
-
-        <div class="input">
-            <label for="add-info">Дополнительная информация</label>
-            <textarea class="form-control" id="add-info" rows="6" placeholder=""></textarea>
-        </div>
-
-
-
-        <input type="submit" href="" class="btn btn-primary" value="ЗАПИСАТЬСЯ">
-
-        <p class="privacy">
-            Вы даете согласие на обработку персональных данных и соглашаетесь
-            c политикой конфиденциальности
-        </p>
-    </form>
-</div>
-
-<div class="registration">
-    <h1>Оставить отзыв</h1>
-    <form>
-
-        <div class="input">
-            <label for="fullname">Ваше имя</label>
-            <input class="form-control" id="fullname" type="text" placeholder="Иван">
-        </div>
-
-        <div class="input">
-            <label for="email">E-mail</label>
-            <input class="form-control" id="email" type="email" placeholder="example@mail.com">
-        </div>
-
-        <div class="input">
-            <label for="add-info">Отзыв</label>
-            <textarea class="form-control" id="add-info" rows="6" placeholder=""></textarea>
-        </div>
-
-
-
-        <input type="submit" href="" class="btn btn-primary" value="Отправить">
-
-        <p class="privacy">
-            Вы даете согласие на обработку персональных данных и соглашаетесь
-            c политикой конфиденциальности
-        </p>
-    </form>
-</div>
+    

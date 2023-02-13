@@ -43,6 +43,15 @@ body {
     overflow-x: hidden !important;
 }
 
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
 .top{
     background-color: rgba(24, 24, 24, 0.658);
     background-blend-mode: multiply;
@@ -719,6 +728,7 @@ footer li{
 
 .outline-btn:hover{
     background-color: #fff !important;
+    color: #000;
 }
 
 .course-info p{
@@ -855,7 +865,14 @@ footer li{
     text-align: center;
 }
 
-.registration{
+.registration-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    background-color: #eceeff;
+}
+
+.registration {
     width: 50%;
     margin: auto;
     margin-top: 40px;
@@ -947,3 +964,4 @@ form .user-details .input-box {
     min-width: 200px;
     max-width: 500px;
 }
+
