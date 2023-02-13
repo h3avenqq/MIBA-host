@@ -38,7 +38,7 @@ namespace MIBA.Controllers
                 _db.Studies.Add(new Studies(obj, _db));
                 _db.SaveChanges();
                 TempData["success"] = "Курс успешно добавлен";
-                RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
             return View();
         }
