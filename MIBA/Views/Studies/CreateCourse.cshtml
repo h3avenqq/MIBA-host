@@ -33,50 +33,50 @@
             <input asp-for="Studies.CategoryId" name="CategoryId" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.Title" class="details">Title</span>
+            <span asp-validation-for="Studies.Title" class="details">Название курса</span>
             <input asp-for="Studies.Title" name="Title" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.Description" class="details">Description</span>
+            <span asp-validation-for="Studies.Description" class="details">Описание</span>
             <input asp-for="Studies.Description" name="Description" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.StudyFormat" class="details">StudyFormat</span>
-            <select asp-for="Studies.StudyFormat">
+            <span asp-validation-for="Studies.StudyFormat" class="details">Формат обучения</span>
+            <select class="form-select select-width" asp-for="Studies.StudyFormat">
                 <option value="0">Очный</option>
                 <option value="1">Заочный</option>
             </select>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.StartTime" class="details">StartTime</span>
-            <input asp-for="Studies.StartTime" name="StartTime" placeholder="" required>
+            <span asp-validation-for="Studies.StartTime" class="details">Начало обучения</span>
+            <input asp-for="Studies.StartTime" name="StartTime" class="select-width" type="date" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.EndTime" class="details">EndTime</span>
-            <input asp-for="Studies.EndTime" name="EndTime" placeholder="" required>
+            <span asp-validation-for="Studies.EndTime" class="details">Конец обучения</span>
+            <input asp-for="Studies.EndTime" name="EndTime" class="select-width" type="date" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.Cost" class="details">Cost</span>
-            <input asp-for="Studies.Cost" name="Cost" placeholder="" required>
+            <span asp-validation-for="Studies.Cost" class="details">Цена</span>
+            <input asp-for="Studies.Cost" name="Cost" class="select-width" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.DocumentAfter" class="details">DocumentAfter</span>
+            <span asp-validation-for="Studies.DocumentAfter" class="details">Выдаваемый документ</span>
             <input asp-for="Studies.DocumentAfter" name="DocumentAfter" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.InfoToKnow" class="details">InfoToKnow</span>
+            <span asp-validation-for="Studies.InfoToKnow" class="details">Блок "Знать"</span>
             <input asp-for="Studies.InfoToKnow" name="InfoToKnow" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.InfoToCan" class="details">InfoToCan</span>
+            <span asp-validation-for="Studies.InfoToCan" class="details">Блок "Уметь"</span>
             <input asp-for="Studies.InfoToCan" name="InfoToCan" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.InfoToUse" class="details">InfoToUse</span>
+            <span asp-validation-for="Studies.InfoToUse" class="details">Блок "Владеть"</span>
             <input asp-for="Studies.InfoToUse" name="InfoToUse" placeholder="" required>
         </div>
         <div class="input-box">
-            <span asp-validation-for="Studies.CourseProgramm" class="details">CourseProgramm</span>
+            <span asp-validation-for="Studies.CourseProgramm" class="details">Программа курса</span>
             <ul id="programs">
 
             </ul>
@@ -85,17 +85,17 @@
             <input id="outer-programs" asp-for="Studies.CourseProgramm" name="CourseProgramm" placeholder="" required hidden>
         </div>
         <div class="input-box">
+            <span asp-validation-for="Lectors" class="details">Лекторы</span>
             <ul id="lectors">
 
             </ul>
-            <select id="lector">
+            <select id="lector" class="form-select lector-select-width">
                 @foreach(Lectors lector in Model.Lectors)
                 {
                     <option value="@lector.Id">@lector.FullName</option>
                 }
             </select>
             <a class="btn btn-primary" onclick="addLector()">Добавить лектора</a>
-            <span asp-validation-for="Lectors" class="details">Lectors</span>
             <input id="outer-lectors" asp-for="Lectors" name="Lectors" placeholder="" required hidden>
         </div>
     </div>

@@ -965,3 +965,22 @@ form .user-details .input-box {
     max-width: 500px;
 }
 
+.form-select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.select-width{
+    width: 150px !important;
+}
+
+.lector-select-width{
+    width: 550px !important;
+}
