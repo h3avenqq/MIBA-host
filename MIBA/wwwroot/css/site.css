@@ -1,7 +1,7 @@
 header{
     background-color: #000;
     color: #fff;
-    height: 70px;
+    height: 80px;
     display: flex;
     align-items: center;
     position: fixed;
@@ -27,7 +27,7 @@ header a:hover{
 
 header .left{
     font-family: 'TildaSans',Arial,sans-serif;
-    margin-left: 20px;
+    margin-left: 50px;
     font-size: 24px;
     font-weight: 400;
 }
@@ -161,7 +161,7 @@ hr {
 
 .about ul li{
     width: 48%;
-    background: url('/media/for-ul-about.png') no-repeat 0px 4px; /* Параметры фона */
+    background: url('/media/for-ul-about.png') no-repeat 0px 4px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
     background-size: 40px;
     padding-left: 60px;
     padding-top: 5px;
