@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Include="Views\News\Index.cshtml" />
+    <None Include="Views\RegistrationJudic\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

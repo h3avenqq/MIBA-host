@@ -1,4 +1,4 @@
-﻿@model Studies
+﻿@model StudiesAndRegs
 @{
     Layout = "~/Views/Shared/_CourseLayout.cshtml";
 }
@@ -7,18 +7,18 @@
     <div class="course-block">
         <div class="info">
             <h1>
-                @Model.Title
+                @Model.Studies.Title
             </h1>
             <p>
-                @Model.Description
+                @Model.Studies.Description
             </p>
             <br />
 
             <div class="course-info">
-                <p>Формат обучения: @(Model.StudyFormat == MIBA.Enums.StudyFormat.Distant ? "Заочно":"Очно")</p>
-                <p>Ближайший период проведения: @Model.StartTime.ToString("dd/mm/yyyy") - @Model.EndTime.ToString("dd/mm/yyyy")</p>
-                <p>Стоимость: @Model.Cost ₽</p>
-                <p>Выдаваемый документ: @Model.DocumentAfter</p>
+                <p>Формат обучения: @(Model.Studies.StudyFormat == MIBA.Enums.StudyFormat.Distant ? "Заочно" : "Очно")</p>
+                <p>Ближайший период проведения: @Model.Studies.StartTime.ToString("dd/mm/yyyy") - @Model.Studies.EndTime.ToString("dd/mm/yyyy")</p>
+                <p>Стоимость: @Model.Studies.Cost ₽</p>
+                <p>Выдаваемый документ: @Model.Studies.DocumentAfter</p>
             </div>
 
 
@@ -46,7 +46,7 @@
 
             <div class="course-description">
                 <p>
-                    @Model.InfoToKnow
+                    @Model.Studies.InfoToKnow
                 </p>
             </div>
         </li>
@@ -63,7 +63,7 @@
 
             <div class="course-description">
                 <p>
-                    @Model.InfoToCan
+                    @Model.Studies.InfoToCan
                 </p>
             </div>
         </li>
@@ -80,7 +80,7 @@
 
             <div class="course-description">
                 <p>
-                    @Model.InfoToUse
+                    @Model.Studies.InfoToUse
                 </p>
             </div>
         </li>
@@ -88,14 +88,14 @@
     <div class="box-shadow course-program">
         <h1>Программа курса</h1>
         <ul class="justify-content-center">
-            @Html.Raw(Model.CourseProgramm)
+            @Html.Raw(Model.Studies.CourseProgramm)
         </ul>
     </div>
 
     <div class="lectors">
         <h1>Лекторы курса</h1>
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            @foreach(Lectors lector in Model.Lectors)
+            @foreach (Lectors lector in Model.Studies.Lectors)
             {
                 <li>
                     <div class="lector-name">
@@ -121,7 +121,7 @@
                 <div class="input">
                     <label for="course">Название курса</label>
                     <select class="form-control" id="course">
-                        <option>@Model.Title</option>
+                        <option>@Model.Studies.Title</option>
                     </select>
                 </div>
 
@@ -169,11 +169,11 @@
         <h1>Записаться на курс</h1>
         <p>Для юридических лиц</p>
 
-        <form>
+            <form method="post" asp-action="Create">
             <div class="input">
                 <label for="course">Название курса</label>
                 <select class="form-control" id="course">
-                    <option>@Model.Title</option>
+                        <option>@Model.Studies.Title</option>
                 </select>
             </div>
 
