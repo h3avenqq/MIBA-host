@@ -1,0 +1,58 @@
+﻿@model Feedback
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+        <li>
+            <a asp-controller="Home" asp-action="Index" type="submit">Главная</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Index" type="submit">Все таблицы</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Logout" type="submit">Выйти</a>
+        </li>
+    </ul>
+</div>
+
+<form class="edit-form" method="post" asp-action="Edit" enctype="multipart/form-data">
+    <div class="row pb-2">
+        <h2 class="text-primary">Редактирование отзыва</h2>
+        <hr />
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <span asp-validation-for="Name" class="details">Имя</span>
+            <input asp-for="Name" name="Name" placeholder="Иван" required>
+        </div>
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <span asp-validation-for="Email" class="details">Email</span>
+            <input asp-for="Email" name="Email" type="email" placeholder="example@example.com" required>
+        </div>
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <span asp-validation-for="Description" class="details">Информация</span>
+            <textarea asp-for="Description" class="brief-textarea" name="Description" type="text" rows="6" required></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:200px">Изменить</button>
+    <a asp-controller="Feedback" asp-action="Index" class="btn btn-secondary" style="width:200px">Вернуться</a>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
