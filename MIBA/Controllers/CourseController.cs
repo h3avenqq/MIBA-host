@@ -35,7 +35,27 @@ namespace MIBA.Controllers
             _db.SaveChanges();
 
             TempData["success"] = "Заявка успешно подана";
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new {id = registration.StudiesId});
+        }
+
+        [HttpPost]
+        public IActionResult RegistrationPhys(RegistrationPhys registration)
+        {
+            _db.RegistrationPhys.Add(registration);
+            _db.SaveChanges();
+
+            TempData["success"] = "Заявка успешно подана";
+            return RedirectToAction("Index", new { id = registration.StudiesId });
+        }
+
+        [HttpPost]
+        public IActionResult Feedback(Feedback feedback)
+        {
+            _db.Feedbacks.Add(feedback);
+            _db.SaveChanges();
+
+            TempData["success"] = "Заявка успешно подана";
+            return Redirect("/");
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using MIBA.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Drawing.Printing;
 
 namespace MIBA.Models
 {
@@ -10,6 +9,7 @@ namespace MIBA.Models
         public int Id { get; set; }
         [Required]
         public Studies Studies { get; set; }
+        public int StudiesId { get; set; }
         [Required]
         public string CompanyName { get; set; }
         [Required]

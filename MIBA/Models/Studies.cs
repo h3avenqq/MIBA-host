@@ -1,6 +1,5 @@
 ﻿using MIBA.Data;
 using MIBA.Enums;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MIBA.Models

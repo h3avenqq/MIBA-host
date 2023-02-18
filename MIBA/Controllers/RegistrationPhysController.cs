@@ -4,18 +4,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MIBA.Controllers
 {
-    public class RegistrationJudicController : Controller
+    public class RegistrationPhysController : Controller
     {
         private readonly ApplicationDbContext _db;
 
-        public RegistrationJudicController(ApplicationDbContext db)
+        public RegistrationPhysController(ApplicationDbContext db)
         {
             _db = db;
         }
 
         public IActionResult Index()
         {
-            var regs = _db.RegistrationJudic.Include(x=>x.Studies).ToList();
+            var regs = _db.RegistrationPhys.Include(x => x.Studies).ToList();
 
             return View(regs);
         }

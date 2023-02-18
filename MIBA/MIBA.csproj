@@ -7,8 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\Feedback\Index.cshtml" />
     <None Include="Views\News\Index.cshtml" />
     <None Include="Views\RegistrationJudic\Index.cshtml" />
+    <None Include="Views\RegistrationPhys\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
