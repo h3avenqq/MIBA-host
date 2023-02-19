@@ -9,6 +9,10 @@ header{
     z-index: 21;
 }
 
+.hidden{
+    display: none;
+}
+
 header a{
     text-decoration: none;
     color: #fff !important;
@@ -954,7 +958,7 @@ form .user-details .input-box {
     border-color: #096cf7cc;
 }
 
-.lector, .chapter {
+.lectors-div, .chapter-div {
     list-style-type: none;
     background-color: #ededed;
     border: 2px solid rgba(21, 127, 196);
@@ -979,6 +983,10 @@ form .user-details .input-box {
 
 .select-width{
     width: 150px !important;
+}
+
+.chapter-input-width {
+    width: 550px !important;
 }
 
 .lector-select-width{

@@ -13,5 +13,11 @@ namespace MIBA.Models
         {
             Studies = new List<Studies>();
         }
+        public string Photo { get; set; }
+
+        public StudyCategories(StudyCategoriesRequest request)
+        {
+            Name = request.Name;
+        }
     }
 }

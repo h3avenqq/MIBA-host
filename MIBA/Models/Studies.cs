@@ -51,11 +51,12 @@ namespace MIBA.Models
             InfoToUse = request.InfoToUse;
             CourseProgramm = request.CourseProgramm;
             Categories = db.StudyCategories.Find(request.CategoryId);
-            string[] allLectors = request.Lectors.Split(' ');
             IList<Lectors> lectors = new List<Lectors>();
-            foreach(string lector in allLectors)
+            string[] allLectors = request.Lectors.Split(' ');
+            foreach (string lector in allLectors)
             {
-                lectors.Add(db.Lectors.Find(Convert.ToInt32(lector)));
+                if (lector != "")
+                    lectors.Add(db.Lectors.Find(Convert.ToInt32(lector.Split("li")[0])));
             }
             Lectors = lectors;
         }

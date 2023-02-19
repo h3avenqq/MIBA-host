@@ -19,5 +19,32 @@ namespace MIBA.Models
         public string CourseProgramm { get; set; }
         public int CategoryId { get; set; }
         public string Lectors { get; set; }
+
+        public CourseRequest() { }
+
+        public CourseRequest(Studies obj) {
+            Id = obj.Id;
+            Title = obj.Title;
+            Description = obj.Description;
+            StudyFormat = obj.StudyFormat;
+            StartTime = obj.StartTime;
+            EndTime = obj.EndTime;
+            Cost = obj.Cost;
+            DocumentAfter = obj.DocumentAfter;
+            InfoToKnow = obj.InfoToKnow;
+            InfoToCan = obj.InfoToCan;
+            InfoToUse = obj.InfoToUse;
+            CourseProgramm = obj.CourseProgramm;
+            CategoryId = obj.Categories.Id;
+            string row = "";
+            foreach (Lectors item in obj.Lectors)
+            {
+                if (row != "")
+                    row += " ";
+                row += item.Id;
+            }
+            Lectors = row;
+
+        }
     }
 }
