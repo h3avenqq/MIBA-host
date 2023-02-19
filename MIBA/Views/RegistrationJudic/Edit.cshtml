@@ -1,4 +1,4 @@
-﻿@model RegistrationJudic
+﻿@model RegistrationJudicAndStudies
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -23,17 +23,21 @@
 
 <form class="edit-form" method="post" asp-action="Edit" enctype="multipart/form-data">
 
-    <input asp-for="Id" name="Id" hidden />
-    <div class="row pb-2">
-        <h2 class="text-primary">Создание заявки на регистрацию юр. лица</h2>
-        <hr />
-    </div>
+    <input asp-for="RegistrationJudic.Id" name="Id" hidden />
 
     <div class="user-details">
         <div class="input-box">
             <label for="course">Название курса</label>
-            <select class="form-control" id="StudiesId" name="StudiesId" asp-for="StudiesId">
-                <option value="@Model.Studies.Id">@Model.Studies.Title</option>
+            <select class="form-control" id="StudiesId" name="StudiesId" asp-for="RegistrationJudic.StudiesId">
+                @foreach (var study in Model.Studies)
+                {
+                    if (Model.RegistrationJudic.StudiesId == study.Id){
+                        <option value="@study.Id" selected>@study.Title</option>
+                    }
+                    else{
+                        <option value="@study.Id">@study.Title</option>
+                    }
+                }
             </select>
         </div>
     </div>
@@ -41,17 +45,17 @@
     <div class="user-details">
         <div class="input-box">
             <label for="company">Название предприятия</label>
-            <input class="form-control" asp-for="CompanyName" name="CompanyName" id="company" type="text" placeholder="">
+            <input class="form-control" asp-for="RegistrationJudic.CompanyName" name="CompanyName" id="company" type="text" placeholder="">
         </div>
 
         <div class="input-box">
             <label for="employers">Количество сотрудников для обучения</label>
-            <input class="form-control" asp-for="PeopleCount" name="PeopleCount" id="employers" type="number" placeholder="">
+            <input class="form-control" asp-for="RegistrationJudic.PeopleCount" name="PeopleCount" id="employers" type="number" style="width: 100px" placeholder="">
         </div>
 
         <div class="user-details">
             <label for="place">Место проведения</label>
-            <select asp-for="StudyPlace" name="StudyPlace" class="form-control" id="place">
+            <select asp-for="RegistrationJudic.StudyPlace" name="StudyPlace" class="form-control" id="place">
                 <option value="0">(не установлено)</option>
                 <option value="1">На территории РХТУ</option>
                 <option value="2">На территории заказчика</option>
@@ -60,24 +64,23 @@
 
         <div class="user-details">
             <label for="fullname">Фамилия Имя Отчество</label>
-            <input class="form-control" asp-for="FullName" name="FullName" id="fullname" type="text" placeholder="Иванов Иван Иванович">
+            <input class="form-control" asp-for="RegistrationJudic.FullName" name="FullName" id="fullname" type="text" placeholder="Иванов Иван Иванович">
         </div>
 
         <div class="user-details">
             <label for="email">E-mail</label>
-            <input class="form-control" asp-for="Email" name="Email" id="email" type="email" placeholder="example@mail.com">
+            <input class="form-control" asp-for="RegistrationJudic.Email" name="Email" id="email" type="email" placeholder="example@mail.com">
         </div>
 
         <div class="user-details">
             <label for="phone">Телефон</label>
-            <input class="form-control" asp-for="Phone" name="Phone" id="phone" type="tel" placeholder="+7 (999) 999-99-99">
+            <input class="form-control" asp-for="RegistrationJudic.Phone" name="Phone" id="phone" type="tel" placeholder="+7 (999) 999-99-99">
         </div>
 
         <div class="user-details">
             <label for="add-info">Дополнительная информация</label>
-            <textarea class="form-control" asp-for="About" name="About" id="add-info" rows="6" placeholder=""></textarea>
+            <textarea class="form-control" asp-for="RegistrationJudic.About" name="About" id="add-info" rows="6" placeholder=""></textarea>
         </div>
-    </div>
 
     <button type="submit" class="btn btn-primary" style="width:200px">Обновить</button>
     <a asp-controller="RegistrationJudic" asp-action="Index" class="btn btn-secondary" style="width:200px">Вернуться</a>

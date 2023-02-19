@@ -23,12 +23,11 @@ namespace MIBA.Controllers
 
         public IActionResult Create()
         {
-            //var reg = new RegistrationJudic();
+            var reg = new RegistrationJudicAndStudies();
 
-            //reg.Studies = _db.Studies.ToList();
+            reg.Studies = _db.Studies.ToList();
 
-            //return View(reg);
-            return RedirectToAction("Index");
+            return View(reg);
         }
 
         [HttpPost]
@@ -48,10 +47,15 @@ namespace MIBA.Controllers
                 return NotFound();
 
 
-            var entity = _db.RegistrationJudic.Include(x=>x.Studies).First(x=>x.Id == id);
+            var regs = _db.RegistrationJudic.First(x=>x.Id == id);
+            var studs = _db.Studies.ToList();
 
-            if (entity == null)
+            if (regs == null)
                 return NotFound();
+
+            var entity = new RegistrationJudicAndStudies();
+            entity.RegistrationJudic = regs;
+            entity.Studies = studs;
 
             return View(entity);
         }
@@ -59,15 +63,6 @@ namespace MIBA.Controllers
         [HttpPost]
         public IActionResult Edit(RegistrationJudic registration)
         {
-            if (!ModelState.IsValid)
-                return View(registration);
-
-
-            var entity = _db.RegistrationJudic.Find(registration.Id);
-
-            if (entity == null)
-                return NotFound();
-
             _db.RegistrationJudic.Update(registration);
             _db.SaveChanges();
 
