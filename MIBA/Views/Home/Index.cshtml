@@ -1,4 +1,4 @@
-﻿@model IEnumerable<StudyCategories>
+﻿@model CategoriesAndNews
 
 @{
     ViewData["Title"] = "Главная";
@@ -21,6 +21,42 @@
     </div>
     <div class="circular-arrow"></div>
 </div>
+
+<div class="news main-block">
+    @if (Model.News.Count() != 0)
+    {
+        <h1>
+            Новости академии
+        </h1>
+
+        <section class="loader">
+
+            <div style="--i:0" class="slider">
+            </div>
+            <div style="--i:1" class="slider">
+            </div>
+            <div style="--i:2" class="slider">
+            </div>
+            <div style="--i:3" class="slider">
+            </div>
+            <div style="--i:4" class="slider">
+            </div>
+        </section>
+
+        <div class="owl-carousel">
+            @foreach (News obj in Model.News)
+            {
+                <div class='news-block item'>
+                    <img src="@obj.Photo" alt="">
+                            <h2>@obj.Title</h2>
+                            <p class="info">@obj.BriefDescription</p>
+                            <p class="date">@obj.Created.ToString("dd/MM/yyyy")</p>
+                </div>
+                }
+        </div>
+    }
+</div>
+
 <div id="about" class="about main-block">
     <div>
         <h1>ОБ АКАДЕМИИ</h1>
@@ -57,7 +93,7 @@
     <h1>НАПРАВЛЕНИЯ ОБУЧЕНИЯ</h1>
     <div class="for-accordion">
         <div class="accordion" id="accordionPanelsStayOpenExample">
-            @foreach(StudyCategories category in Model)
+            @foreach(StudyCategories category in Model.Categories)
             {
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-heading-@category.Id">

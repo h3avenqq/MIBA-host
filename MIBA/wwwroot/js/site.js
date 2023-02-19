@@ -67,3 +67,16 @@ function addLector() {
     div.appendChild(a);
     ul.appendChild(div);
 }
+
+window.onload = function () {
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 50,
+            autoplay: true,
+            smartSpeed: 1000,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true
+        });
+    });
+}

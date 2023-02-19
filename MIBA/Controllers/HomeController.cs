@@ -19,7 +19,7 @@ namespace MIBA.Controllers
 
         public IActionResult Index()
         {
-            return View(_db.StudyCategories.Include(x=>x.Studies).ToList());
+            return View(new CategoriesAndNews { Categories = _db.StudyCategories.Include(x => x.Studies).ToList(), News = _db.News.ToList() });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
