@@ -1,8 +1,17 @@
-header{
-    background-color: #000;
+#toast-container > .toast-error {
+    background-color: #BD362F;
+}
+
+#toast-container > .toast-success {
+    background-color: #51a351;
+}
+
+header {
+    background-color: transparent;
     color: #fff;
     height: 80px;
     display: flex;
+    mix-blend-mode: difference;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -59,7 +68,7 @@ hr {
 .top{
     background-color: rgba(24, 24, 24, 0.658);
     background-blend-mode: multiply;
-    background-image: url('/media/top.jpg');
+    background-image: url('/media/top.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -183,8 +192,8 @@ hr {
 }
 
 .about h1{
-    font-size: 24px;
-    margin-top: 5rem;
+    font-size: 36px;
+    line-height: 52px;
 }
 
 .about p{
@@ -198,16 +207,50 @@ hr {
 }
 
 .about ul li{
-    width: 48%;
-    background: url('/media/for-ul-about.png') no-repeat 0px 4px; /* ��������� ���� */
-    background-size: 40px;
-    padding-left: 60px;
-    padding-top: 5px;
     margin: 10px 5px;
+    list-style-type: none;
 }
 
 .about ul li p{
     font-size: 16px;
+}
+
+.about ul{
+    padding-left: 0;
+}
+
+.about ul.nav{
+    margin-bottom: 2.5rem !important;
+}
+
+.about ul.nav li{
+    width: 42%;
+    list-style-type: none;
+}
+
+.about ul.nav li h1{
+    font-size: 26px;
+    line-height: 1.23;
+}
+
+.about ul.nav li p{
+    font-size: 20px;
+}
+
+.target-img{
+    height: 220px;
+}
+
+.target-img.right {
+    margin-left: 50px;
+    background-image: url('/media/rigth.png');
+    background-size: cover;
+}
+
+.target-img.left {
+    margin-right: 80px;
+    background-image: url('/media/left.jpeg');
+    background-size: cover;
 }
 
 .about ol {
@@ -655,6 +698,8 @@ footer li{
 .for-admin-panel {
     background-color: rgba(24, 24, 24, 0.658);
     background-blend-mode: multiply;
+    background-attachment: fixed;
+    height: 100vh;
     background-image: url('https://moskvalux.ru/wp-content/uploads/2020/12/blog-28.03.2018-earnfree-3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
