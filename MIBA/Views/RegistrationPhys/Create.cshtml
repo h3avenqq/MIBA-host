@@ -1,0 +1,77 @@
+﻿@model RegistrationPhysAndStudies
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+        <li>
+            <a asp-controller="Home" asp-action="Index" type="submit">Главная</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Index" type="submit">Все таблицы</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Logout" type="submit">Выйти</a>
+        </li>
+    </ul>
+</div>
+
+<form class="edit-form" method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="row pb-2">
+        <h2 class="text-primary">Создание заявки на регистрацию физ. лица</h2>
+        <hr />
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <label for="course">Название курса</label>
+            <select class="form-control" id="StudiesId" name="StudiesId" asp-for="RegistrationPhys.StudiesId">
+                @foreach (var study in Model.Studies)
+                {
+                    <option value="@study.Id">@study.Title</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="user-details">
+        <div class="user-details">
+            <label for="fullname">Фамилия Имя Отчество</label>
+            <input class="form-control" asp-for="RegistrationPhys.FullName" name="FullName" id="fullname" type="text" placeholder="Иванов Иван Иванович">
+        </div>
+
+        <div class="user-details">
+            <label for="birthday">Дата рождения</label>
+            <input class="form-control" asp-for="RegistrationPhys.Birthday" type="date" name="Birthday" id="birthday" />
+        </div>
+
+        <div class="user-details">
+            <label for="email">E-mail</label>
+            <input class="form-control" asp-for="RegistrationPhys.Email" name="Email" id="email" type="email" placeholder="example@mail.com">
+        </div>
+
+        <div class="user-details">
+            <label for="phone">Телефон</label>
+            <input class="form-control" asp-for="RegistrationPhys.Phone" name="Phone" id="phone" type="tel" placeholder="+7 (999) 999-99-99">
+        </div>
+
+        <div class="user-details">
+            <label for="add-info">Дополнительная информация</label>
+            <textarea class="form-control" asp-for="RegistrationPhys.About" name="About" id="add-info" rows="6" placeholder=""></textarea>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:200px">Создать</button>
+    <a asp-controller="RegistrationPhys" asp-action="Index" class="btn btn-secondary" style="width:200px">Вернуться</a>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
