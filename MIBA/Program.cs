@@ -1,4 +1,5 @@
 using MIBA.Data;
+using MIBA.Services.DbTriggers;
 using MIBA.Services.EmailService;
 using MIBA.Services.HashService;
 using MIBA.Services.SaveFileService;
@@ -12,6 +13,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseTriggers(triggerOptions =>
+    {
+        triggerOptions.AddTrigger<RegistrationJudicTrigger>();
+        triggerOptions.AddTrigger<RegistrationPhysTrigger>();
+        triggerOptions.AddTrigger<FeedbackTrigger>();
+    });
 });
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
