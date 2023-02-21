@@ -68,7 +68,7 @@ hr {
 .top{
     background-color: rgba(24, 24, 24, 0.658);
     background-blend-mode: multiply;
-    background-image: url('/media/top.jpeg');
+    background-image: url('/media/top.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -145,7 +145,7 @@ hr {
     z-index: 1;
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 44.5%;
     width: 58px;
     height: 58px;
     animation: down 2.0s infinite;
@@ -185,10 +185,16 @@ hr {
     background-color: #fff;
 }
 
-.about div{
+.about .head-of-block{
+    padding-left: 5%;
+    width: 85%;
+    margin-bottom: 5%;
+}
+
+.block-about {
     display: block;
     margin: auto;
-    width: 50%;
+    width: 60%;
 }
 
 .about h1{
@@ -206,34 +212,34 @@ hr {
     font-size: 20px;
 }
 
-.about ul li{
+.about .target-ul li {
     margin: 10px 5px;
     list-style-type: none;
 }
 
-.about ul li p{
+.about .target-ul li p{
     font-size: 16px;
 }
 
-.about ul{
+.about .target-ul{
     padding-left: 0;
 }
 
-.about ul.nav{
+.about .target-ul ul.nav{
     margin-bottom: 2.5rem !important;
 }
 
-.about ul.nav li{
-    width: 42%;
+.about .target-ul ul.nav li{
+    width: 50%;
     list-style-type: none;
 }
 
-.about ul.nav li h1{
+.about .target-ul ul.nav li h1{
     font-size: 26px;
     line-height: 1.23;
 }
 
-.about ul.nav li p{
+.about .target-ul ul.nav li p{
     font-size: 20px;
 }
 
@@ -242,49 +248,69 @@ hr {
 }
 
 .target-img.right {
-    margin-left: 50px;
+    width: 45% !important;
     background-image: url('/media/rigth.png');
     background-size: cover;
 }
 
 .target-img.left {
-    margin-right: 80px;
+    width: 45% !important;
     background-image: url('/media/left.jpeg');
     background-size: cover;
 }
 
-.about ol {
-	list-style-type: none; 
-	counter-reset: num;
-	margin: 0 0 0 40px;
-	padding: 15px 0 5px 0;
-	font-size: 16px;
+.missions {
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1200px;
 }
-.about ol li {
-	position: relative;	
-	margin: 0 0 0 30px;
-	padding: 0 0 30px 0;
-    font-weight: 600;
-    font-size: 18px;
+
+.missions li{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10%;
+    text-align: left;
+    float: none;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mis-top {
+    z-index: 2;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 4px;
+    margin-bottom: 0;
+    margin-left: 0 !important;
+}
+
+.mis-bot {
+    z-index: 2;
+    position: relative;
+}
+
+.mis-top p {
+    font-weight: 700 !important;
+    font-size: 22px !important;
     line-height: 1.35;
-    width: 80%;
 }
-.about ol li:before {
-	content: counter(num); 
-	counter-increment: num;
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	left: -68px;
-	width: 42px;
-	height: 42px;
-	background: #fff;
-	color: #4dcbf5;
-	text-align: center;
-	line-height: 38px;
-	font-size: 22px;
-	border-radius: 50%;
-	border: 2px solid #4dcbf5;
+
+.mis-num {
+    position: absolute;
+    z-index: 1;
+    line-height: 150px;
+    top: 0;
+    width: 100% !important;
+    text-align: center;
+    font-size: 200px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #94e4ff;
 }
 
 .study-branches {
@@ -363,7 +389,63 @@ hr {
     color: #000 !important;
 }
 
-.create-block h1{
+.process {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.process h1{
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 5rem;
+}
+
+.process ul{
+}
+
+.process li{
+    width: 350px;
+    margin: 20px 30px;
+    position: relative;
+}
+
+.process .for-num{
+    z-index: 2;
+    background-color: #fff;
+    left: 145px;
+    top: -35px;
+    font-size: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    padding: 20px 30px;
+    position: absolute;
+}
+
+.process .for-text{
+    z-index: 1;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    padding-top: 50px;
+    font-size: 18px;
+    height: 250px;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.for-text notstrong{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.for-text h2{
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.create-block h1 {
     font-size: 30px;
     line-height: 1.35;
     font-weight: 700;
@@ -391,10 +473,10 @@ hr {
     object-fit: cover;
 }
 
-.not-found{
+.not-found {
     background-color: rgba(15, 15, 15, 0.658);
     background-blend-mode: multiply;
-    background-image: url('/media/computer-screens-run.jpg');
+    background-image: url('/media/reg-back.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
