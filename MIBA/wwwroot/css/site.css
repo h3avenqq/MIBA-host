@@ -8,7 +8,6 @@
 
 header {
     background-color: transparent;
-    color: #fff;
     height: 80px;
     display: flex;
     mix-blend-mode: difference;
@@ -66,7 +65,7 @@ hr {
 }
 
 .top{
-    background-color: rgba(24, 24, 24, 0.658);
+    background-color: rgba(30, 30, 30, 0.658);
     background-blend-mode: multiply;
     background-image: url('/media/top.jpg');
     background-repeat: no-repeat;
@@ -144,12 +143,16 @@ hr {
 .circular-arrow {
     z-index: 1;
     position: absolute;
-    bottom: 0;
-    left: 44.5%;
+    bottom: 30px;
+    left: 0;
     width: 58px;
     height: 58px;
     animation: down 2.0s infinite;
-    margin: 18px auto 42px auto;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
     box-sizing: border-box;
 }
 
@@ -157,7 +160,7 @@ hr {
     content: '';
     position: absolute;
     top: 15px;
-    left: 18px;
+    left: 13px;
     width: 32px;
     height: 32px;
     border-left: 2px solid #ffffff;
@@ -260,9 +263,9 @@ hr {
 }
 
 .missions {
+    margin-left: 2%;
     margin-bottom: 0;
     padding-left: 0;
-    margin-left: auto;
     margin-right: auto;
     width: 100%;
     max-width: 1200px;
@@ -314,7 +317,7 @@ hr {
 }
 
 .study-branches {
-    background-color: #ccf2ff;
+    background-color: #f2f9fd;
     padding-top: 70px;
 }
 
@@ -399,6 +402,9 @@ hr {
     font-size: 34px;
     font-weight: 600;
     margin-bottom: 5rem;
+    width: 80%;
+    display: block;
+    margin-left: auto;
 }
 
 .process ul{
@@ -571,71 +577,58 @@ hr {
   width: 0%;
 }
 
-.how-works h1{
+.how-works h1 {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 28px;
-    line-height: 1.23;
-    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.35;
+    font-weight: 700;
+    text-align: center;
 }
 
 .how-works div{
     margin-left: 200px;
 }
 
-.how-works ol {
+.how-works ul {
+    text-align: center;
 	list-style-type: none; 
-	counter-reset: num;
-	margin: 0 0 0 40px;
-	padding: 15px 0 5px 0;
 	font-size: 16px;
-    margin-left: 100px;
+    width: 1200px;
+    margin: auto;
 }
-.how-works ol li {
-	position: relative;	
-	margin: 0 0 0 0;
-	padding: 0 0 30px 0;
+.how-works ul li {
     font-weight: 600;
     font-size: 18px;
     line-height: 1.35;
-    width: 500px;
+    width: 300px;
+    margin-bottom: 3rem;
+}
+.how-works ul .arrow{
+    width: 80px;
 }
 
-.how-works ol li h1{
-    text-align: left !important;
+.arrow svg{
+    margin-top: 40%;
+}
+
+
+.how-works ul li h1{
+    text-align: center;
     margin-bottom: 10px;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.35;
     font-weight: 600;
 }
 
-.how-works ol li p{
+.how-works ul li p{
     line-height: 1.55;
     font-weight: 300;
-    font-size: 18px;
-}
-
-.how-works ol li:before {
-	content: counter(num); 
-	counter-increment: num;
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	left: -50px;
-	width: 34px;
-	height: 34px;
-	background: #fff;
-	color: #ffffff;
-	text-align: center;
-	line-height: 30px;
-	font-size: 18px;
-	border-radius: 50%;
-	border: 2px solid #1c36ff;
-    background-color: #1c36ff;
+    font-size: 14px;
 }
 
 .partners-block {
-    background-color: #ccf2ff;
+    background-color: #f2f9fd;
     padding: 70px 100px;
 }
 
