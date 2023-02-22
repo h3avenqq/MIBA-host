@@ -64,8 +64,8 @@ hr {
     padding: 0;
 }
 
-.top{
-    background-color: rgba(30, 30, 30, 0.658);
+.top {
+    background-color: rgba(61, 61, 61, 0.658);
     background-blend-mode: multiply;
     background-image: url('/media/top.jpg');
     background-repeat: no-repeat;
