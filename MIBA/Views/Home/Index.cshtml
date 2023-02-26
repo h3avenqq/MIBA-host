@@ -1,10 +1,35 @@
-﻿@model CategoriesAndNews
+﻿@model CategoriesNewCourseNews
 
 @{
     ViewData["Title"] = "Главная";
 }
 
-<div class="top main-block">
+<partial name="_Notifications" />
+
+<div class="background" data-modal-window="modal_reg_anon">
+    <form method="post" asp-action="NewCourseRequest" id="funreg">
+        <h1>Заявка</h1>
+        <p>Опишите заявку для последующей связи с вами</p>
+        <div class="user-details">
+            <div class="input-box">
+                <span asp-validation-for="NewCourse.Name">ФИО</span>
+                <input asp-for="NewCourse.Name" name="Name" required>
+            </div>
+            <div class="input-box">
+                <span asp-validation-for="NewCourse.Email">Email</span>
+                <input asp-for="NewCourse.Email" name="Email" placeholder="example@muctr.ru" required>
+            </div>
+            <div class="input-box">
+                <span asp-validation-for="NewCourse.Description">Краткое описание курса</span>
+                <textarea asp-for="NewCourse.Description" name="Description" required></textarea>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Отправить заявку" />
+    </form>
+</div>  
+
+
+<div class="top">
     <div class="info">
         <h1 id="info-h1">
             МЕЖДУНАРОДНАЯ
@@ -16,7 +41,7 @@
             с необходимыми профессиональными компетенциями
         </p>
 
-        <a href="" class="btn btn-primary">ВСЕ КУРСЫ</a>
+        <a href="#study" class="btn btn-primary">ВСЕ КУРСЫ</a>
 
     </div>
     <div class="circular-arrow"></div>
@@ -263,7 +288,8 @@
     <div>
         <h1>НЕ НАШЛИ ПОДХОДЯЩИЙ КУРС?</h1>
         <p>Оставьте заявку на нашем сайте и мы разработаем уникальную программу под ваши бизнес-задачи, поможем выстроить технологический процесс, а также обучим технологическому процессу под задачи вашего бизнеса</p>
-        <button class="btn-new btn-1 hover-filled-slide-left">
+        <div id="overlay"></div>
+        <button class="btn-new btn-1 hover-filled-slide-left" data-modal-btn="modal_reg_anon">
             <span>ОСТАВИТЬ ЗАЯВКУ</span>
         </button>
     </div>
@@ -315,24 +341,28 @@
         </li>
     </ul>
 </div>
-<div id="partners" class="partners-block main-block">
-    <h1>НАШИ ПАРТНЕРЫ</h1>
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        @{
+<div id="partners" class="partners-block">
+    <div class="main-block">
+        <h1>НАШИ ПАРТНЕРЫ</h1>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            @{
 
-            DirectoryInfo Folder;
-            FileInfo[] Images;
+                DirectoryInfo Folder;
+                FileInfo[] Images;
 
-            Folder = new DirectoryInfo("wwwroot/media/Investors");
-            Images = Folder.GetFiles();
+                Folder = new DirectoryInfo("wwwroot/media/Investors");
+                Images = Folder.GetFiles();
 
-            for (int k = 0; k < Images.Length; k++)
-            {
-                @Html.Raw("<li>");
-                string image = String.Format(@"{0}/{1}", "/media/Investors", Images[k].Name);
-                @Html.Raw("<img src='" + image + "' alt='' />")
-                @Html.Raw("</li>");
+                for (int k = 0; k < Images.Length; k++)
+                {
+                    @Html.Raw("<li>")
+                    ;
+                    string image = String.Format(@"{0}/{1}", "/media/Investors", Images[k].Name);
+                    @Html.Raw("<img src='" + image + "' alt='' />")
+                    @Html.Raw("</li>")
+                    ;
+                }
             }
-        }
-    </ul>
+        </ul>
+    </div>
 </div>

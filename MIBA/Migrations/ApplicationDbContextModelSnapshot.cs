@@ -82,6 +82,31 @@ namespace MIBA.Migrations
                     b.ToTable("Lectors");
                 });
 
+            modelBuilder.Entity("MIBA.Models.NewCourse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NewCourse");
+                });
+
             modelBuilder.Entity("MIBA.Models.News", b =>
                 {
                     b.Property<int>("Id")

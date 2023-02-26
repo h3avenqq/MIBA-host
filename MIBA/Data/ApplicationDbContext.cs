@@ -28,5 +28,6 @@ namespace MIBA.Data
         public DbSet<Studies> Studies { get; set; }
         public DbSet<Lectors> Lectors { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<NewCourse> NewCourse { get; set; }
     }
 }

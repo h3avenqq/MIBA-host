@@ -2,6 +2,8 @@
 using MIBA.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
 
 namespace MIBA.Controllers
@@ -19,7 +21,20 @@ namespace MIBA.Controllers
 
         public IActionResult Index()
         {
-            return View(new CategoriesAndNews { Categories = _db.StudyCategories.Include(x => x.Studies).ToList(), News = _db.News.ToList() });
+            return View(new CategoriesNewCourseNews { Categories = _db.StudyCategories.Include(x => x.Studies).ToList(), News = _db.News.ToList(), NewCourse = new NewCourse() });
+        }
+
+        public async Task<IActionResult> NewCourseRequest(NewCourse obj)
+        {
+            if (ModelState.IsValid)
+            {
+                await _db.NewCourse.AddAsync(obj);
+                await _db.SaveChangesAsync();
+                TempData["success"] = "Заявка отправлена";
+                return RedirectToAction("Index");
+            }
+            TempData["error"] = "Заявка была заполнена некорректно";
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

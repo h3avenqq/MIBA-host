@@ -73,6 +73,7 @@ hr {
     width: 100%;
     height: 100vh;
     display: flex;
+    padding: 70px 0;
     align-items: center;
 }
 
@@ -180,8 +181,16 @@ hr {
     }
 }
 
-.main-block{
+.main-block {
     padding: 70px 0;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.main-block.active {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .about{
@@ -1186,4 +1195,127 @@ form .user-details .input-box {
     background-size: cover;
     /*height: 200px;*/
     width: 270px;
+}
+
+#overlay {
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 12;
+    background-color: rgba(102, 102, 102, 0.5) !important;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: none;
+    visibility: visible;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    overflow-y: auto;
+    display: none;
+}
+
+.background {
+    position: fixed;
+    display: none;
+    z-index: 9999;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.close-btn-reg-anon {
+    top: 0;
+}
+
+#funreg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 45px;
+    width: 450px;
+    background-color: #fff;
+    z-index: 22;
+}
+
+#funreg h1{
+    margin-bottom: 11px;
+    font-size: 32px;
+    line-height: 1.23;
+    font-family: 'Roboto',Arial,sans-serif;
+    font-weight: 600;
+    color: #000000;
+    text-align: left;
+}
+
+#funreg p{
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.55;
+    font-family: 'Roboto',Arial,sans-serif;
+    font-weight: 300;
+    color: #000000;
+}
+
+#funreg input-box{
+    margin-top: 20px;
+}
+
+#funreg span{
+    padding-bottom: 5px;
+    padding-right: 10px;
+    font-size: 18px;
+    line-height: 1.55;
+    font-family: 'Roboto',Arial,sans-serif;
+    font-weight: 300;
+    color: #000000;
+}
+
+#funreg label{
+    margin: 5px;
+    font-size: 14px;
+    font-family: 'Roboto',Arial,sans-serif;
+    font-weight: 300;
+    color: #000000;
+}
+
+#funreg input{
+    font-size: 14px;
+    line-height: 1.55;
+    font-family: 'Roboto',Arial,sans-serif;
+    font-weight: 300;
+}
+
+#funreg .btn{
+    font-size: 20px;
+    font-weight: 400;
+    padding: 8px !important;
+    width: 100%;
+}
+
+.fun-reg-btn{
+    padding: 12px !important;
+    width: 300px !important;
+    font-size: 30px;
+    height: auto !important;
+}
+
+.body-stop-scroll {
+    overflow-y: hidden !important;
 }
