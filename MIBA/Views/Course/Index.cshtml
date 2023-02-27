@@ -232,7 +232,7 @@
     <div class="registration">
         <h1>Оставить отзыв</h1>
         <form method="post" asp-action="Feedback">
-
+                <input id="StudiesId" asp-for="Studies.Id" name="StudiesId" hidden />
             <div class="input">
                 <label for="fullname">Ваше имя</label>
                 <input asp-for="Feedback.Name" name="Name" class="form-control" id="fullname" type="text" placeholder="Иван">

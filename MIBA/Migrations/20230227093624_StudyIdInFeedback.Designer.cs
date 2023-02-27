@@ -4,6 +4,7 @@ using MIBA.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MIBA.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230227093624_StudyIdInFeedback")]
+    partial class StudyIdInFeedback
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,12 +59,12 @@ namespace MIBA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StudiesId")
+                    b.Property<int>("StudyId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StudiesId");
+                    b.HasIndex("StudyId");
 
                     b.ToTable("Feedbacks");
                 });
@@ -341,13 +343,13 @@ namespace MIBA.Migrations
 
             modelBuilder.Entity("MIBA.Models.Feedback", b =>
                 {
-                    b.HasOne("MIBA.Models.Studies", "Studies")
+                    b.HasOne("MIBA.Models.Studies", "Study")
                         .WithMany()
-                        .HasForeignKey("StudiesId")
+                        .HasForeignKey("StudyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Studies");
+                    b.Navigation("Study");
                 });
 
             modelBuilder.Entity("MIBA.Models.RegistrationJudic", b =>

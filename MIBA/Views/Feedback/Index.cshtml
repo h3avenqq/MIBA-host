@@ -40,6 +40,7 @@
     <table class="table table-bordered" style="width: 100%">
         <thead class="reg-table-head">
             <tr>
+                <th>Курс</th>
                 <th>Имя</th>
                 <th>E-mail</th>
                 <th>Отзыв</th>
@@ -49,6 +50,9 @@
             @foreach (var obj in Model)
             {
                 <tr>
+                    <td>
+                        @obj.Studies.Title
+                    </td>
                     <td>
                         @obj.Name
                     </td>

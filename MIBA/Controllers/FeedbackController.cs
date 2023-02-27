@@ -1,6 +1,7 @@
 ﻿using MIBA.Data;
 using MIBA.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace MIBA.Controllers
 {
@@ -15,14 +16,16 @@ namespace MIBA.Controllers
 
         public IActionResult Index()
         {
-            var feedbacks = _db.Feedbacks.ToList();
+            var feedbacks = _db.Feedbacks.Include(x=>x.Studies).ToList();
 
             return View(feedbacks);
         }
 
         public IActionResult Create()
         {
-            return View();
+            var feedback = new FeedbackAndStudies();
+            feedback.Studies = _db.Studies.ToList();
+            return View(feedback);
         }
 
         [HttpPost]
@@ -39,9 +42,15 @@ namespace MIBA.Controllers
 
         public IActionResult Edit(int? id)
         {
-            var feedback = _db.Feedbacks.FirstOrDefault(x => x.Id == id);
+            var vm = new FeedbackAndStudies();
+            vm.Feedback = _db.Feedbacks.Include(x=>x.Studies).FirstOrDefault(x => x.Id == id);
 
-            return View(feedback);
+            if (vm.Feedback == null)
+                return NotFound();
+
+            vm.Studies = _db.Studies.ToList();
+
+            return View(vm);
         }
 
         [HttpPost]

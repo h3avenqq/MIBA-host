@@ -6,6 +6,8 @@ namespace MIBA.Models
     {
         [Key]
         public int Id { get; set; }
+        public int StudiesId { get; set; }
+        public Studies? Studies { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

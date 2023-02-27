@@ -1,4 +1,4 @@
-﻿@model Feedback
+﻿@model FeedbackAndStudies
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -29,22 +29,41 @@
 
     <div class="user-details">
         <div class="input-box">
-            <span asp-validation-for="Name" class="details">Имя</span>
-            <input asp-for="Name" name="Name" placeholder="Иван" required>
+            <label for="course">Название курса</label>
+            <select class="form-control" id="StudiesId" name="StudiesId" asp-for="Feedback.StudiesId">
+                @foreach (var study in Model.Studies)
+                {
+                    if (Model.Feedback.StudiesId == study.Id)
+                    {
+                        <option value="@study.Id" selected>@study.Title</option>
+                    }
+                    else
+                    {
+                        <option value="@study.Id">@study.Title</option>
+                    }
+                }
+            </select>
         </div>
     </div>
 
     <div class="user-details">
         <div class="input-box">
-            <span asp-validation-for="Email" class="details">Email</span>
-            <input asp-for="Email" name="Email" type="email" placeholder="example@example.com" required>
+            <span asp-validation-for="Feedback.Name" class="details">Имя</span>
+            <input asp-for="Feedback.Name" name="Name" placeholder="Иван" required>
         </div>
     </div>
 
     <div class="user-details">
         <div class="input-box">
-            <span asp-validation-for="Description" class="details">Информация</span>
-            <textarea asp-for="Description" class="brief-textarea" name="Description" type="text" rows="6" required></textarea>
+            <span asp-validation-for="Feedback.Email" class="details">Email</span>
+            <input asp-for="Feedback.Email" name="Email" type="email" placeholder="example@example.com" required>
+        </div>
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <span asp-validation-for="Feedback.Description" class="details">Информация</span>
+            <textarea asp-for="Feedback.Description" class="brief-textarea" name="Description" type="text" rows="6" required></textarea>
         </div>
     </div>
     <button type="submit" class="btn btn-primary" style="width:200px">Изменить</button>
