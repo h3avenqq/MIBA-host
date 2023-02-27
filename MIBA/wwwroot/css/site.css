@@ -1,3 +1,7 @@
+html::-webkit-scrollbar {
+    display: none;
+}
+
 #toast-container > .toast-error {
     background-color: #BD362F;
 }
@@ -183,7 +187,7 @@ hr {
 
 .main-block {
     padding: 70px 0;
-    transform: translateY(150px);
+    transform: translateY(100px);
     opacity: 0;
     transition: 2s all ease;
 }
@@ -1252,6 +1256,17 @@ form .user-details .input-box {
     width: 450px;
     background-color: #fff;
     z-index: 22;
+    animation: incoming 0.5s forwards;
+}
+
+@keyframes incoming {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 #funreg h1{
