@@ -862,7 +862,7 @@ footer li{
 .head-block{
     background-color: rgba(24, 24, 24, 0.7);
     background-blend-mode: multiply;
-    background-image: url('../media/industrial-metal-dri.jpg');
+    /*background-image: url('../media/industrial-metal-dri.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -200px;

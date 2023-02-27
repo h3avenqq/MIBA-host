@@ -8,14 +8,16 @@ namespace MIBA.Controllers
     public class CourseController : Controller
     {
         private readonly ApplicationDbContext _db;
+
         public CourseController(ApplicationDbContext db)
         {
             _db = db;
         }
+
         public IActionResult Index(int id)
         {
             var studAndRegs = new StudiesAndRegs();
-            var studs = _db.Studies.Include(x => x.Lectors).FirstOrDefault(x => x.Id == id);
+            var studs = _db.Studies.Include(x => x.Lectors).Include(x=>x.Categories).FirstOrDefault(x => x.Id == id);
             if (studs == null)
                 return NotFound();
 
