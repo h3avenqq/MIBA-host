@@ -6,5 +6,7 @@
         public RegistrationPhys RegistrationPhys { get; set; }
         public RegistrationJudic RegistrationJudic { get; set; }
         public Feedback Feedback { get; set; }
+
+        public IList<Feedback> Feedbacks { get; set; }
     }
 }

@@ -219,4 +219,10 @@ document.addEventListener('DOMContentLoaded', function () {
         btnOpen: '.modal_reg_anons_open',
         btnClose: '.modal_reg__close'
     });
+
+    modalController({
+        modal: '.modal_rev_anon',
+        btnOpen: '.modal_rev_anon',
+        btnClose: 'modal_rev__close'
+    })
 }, false);
