@@ -1319,3 +1319,17 @@ form .user-details .input-box {
 .body-stop-scroll {
     overflow-y: hidden !important;
 }
+
+/* Tables */
+
+.table tbody tr:nth-child(odd) {
+    background: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #e5e5e5;
+}
+
+.table thead {
+    background: #87CEFA;
+}
