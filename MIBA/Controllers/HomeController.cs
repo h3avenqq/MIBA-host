@@ -26,6 +26,7 @@ namespace MIBA.Controllers
 
         public async Task<IActionResult> NewCourseRequest(NewCourse obj)
         {
+            obj.IsChecked = false;
             if (ModelState.IsValid)
             {
                 await _db.NewCourse.AddAsync(obj);

@@ -24,6 +24,34 @@ window.onclick = function (event) {
     }
 }
 
+function filterNewCourse(filter) {
+    document.querySelector(".filter.active").classList.remove("active");
+    document.querySelector("." + filter).classList.add("active");
+
+    /*var btns = document.querySelectorAll(".btn-secondary");
+    btns.forEach(element => {
+        if (!element.classList.contains("hidden"))
+            element.classList.add("hidden")
+    });
+    if (document.querySelector(".btn." + filter) != null)
+        document.querySelector(".btn." + filter).classList.remove("hidden");*/
+
+    var table = document.querySelector("table");
+    var tr = table.getElementsByTagName("tr");
+    for (var i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td.className == "false" && filter == "IsChecked") {
+            if (!tr[i].classList.contains("hidden"))
+                tr[i].classList.add("hidden");
+        } else if (td.className == "true" && filter == "NotChecked") {
+            if (!tr[i].classList.contains("hidden"))
+                tr[i].classList.add("hidden");
+        } else {
+            tr[i].classList.remove("hidden");
+        }
+    }
+}
+
 function reveal() {
     var reveals = document.querySelectorAll(".main-block");
     for (var i = 0; i < reveals.length; i++) {
@@ -125,7 +153,6 @@ window.onload = function () {
 
 window.addEventListener("resize", function () {
     var width = window.innerWidth;
-    document.querySelector(".info h1").style.fontSize = (width / 1920 * 45).toString() + "px";
     var arr = document.querySelectorAll(".img-block");
     arr.forEach(item => {
         item.style.width = (width / 1920 * 300).toString() + "px";

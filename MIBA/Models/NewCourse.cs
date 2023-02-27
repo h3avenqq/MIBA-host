@@ -12,5 +12,6 @@ namespace MIBA.Models
         public string Email { get; set; }
         [Required]
         public string Description { get; set; }
+        public bool IsChecked { get; set; }
     }
 }

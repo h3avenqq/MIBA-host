@@ -31,5 +31,20 @@ namespace MIBA.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Checked(int? id)
+        {
+            var obj = _db.NewCourse.Find(id);
+
+            if (obj == null)
+                return NotFound();
+
+            obj.IsChecked = !obj.IsChecked;
+
+            _db.SaveChanges();
+            TempData["success"] = "Успешно";
+
+            return RedirectToAction("Index");
+        }
     }
 }

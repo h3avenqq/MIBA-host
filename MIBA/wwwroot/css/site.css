@@ -41,9 +41,18 @@ header a:hover{
     background-size: 100% 2px;
 }
 
-header .left{
+header .left {
     font-family: 'TildaSans',Arial,sans-serif;
     margin-left: 50px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.header-left {
+    margin-top: 5px;
+    position:absolute;
+    font-family: 'TildaSans',Arial,sans-serif;
+    margin-left: 30px;
     font-size: 24px;
     font-weight: 400;
 }
@@ -74,6 +83,7 @@ hr {
     background-image: url('/media/top.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -285,7 +295,7 @@ hr {
 }
 
 .missions li{
-    width: 50%;
+    width: 550px;
     display: inline-block;
     vertical-align: top;
     margin-bottom: 10%;
@@ -826,6 +836,14 @@ footer li{
     text-decoration: none;
 }
 
+.table-filter{
+    border-top: 0;
+}
+
+.table-filter thead tr{
+    border-top: 0;
+}
+
 .table-area {
     background-color: white;
     margin-top: 0;
@@ -1347,4 +1365,221 @@ form .user-details .input-box {
 
 .table thead {
     background: #87CEFA;
+}
+
+.filter {
+    background-color: #d9d9d9;
+    border-radius: 10px 10px 0 0;
+    margin-right: 1px;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.filter.active {
+    background-color: #87CEFA;
+}
+
+@media screen and (max-width: 1835px) {
+    .missions li{
+        width: 500px !important;
+    }
+    @media screen and (max-width: 1669px) {
+        .missions li {
+            width: 400px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px){
+    .block-about {
+        width: 80%;
+    }
+
+    .partners-block li {
+        width: 150px;
+        height: 100px;
+        margin: 1rem 2rem;
+    }
+
+    .partners-block img {
+        max-height: 100px;
+        max-width: 150px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .block-about {
+            width: 90%;
+        }
+        .how-works h1 {
+            margin-bottom: 2rem;
+            font-size: 25px;
+        }
+        .how-works ul {
+            font-size: 14px;
+            width: 800px;
+            margin: auto;
+        }
+
+        .how-works ul li {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.35;
+            width: 225px;
+        }
+
+        .how-works ul .arrow {
+            width: 50px;
+        }
+
+        .arrow svg {
+            width: 50px;
+            margin-top: 40%;
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        .target-ul{
+            width: 700px;
+        }
+        @media screen and (max-width: 800px) {
+            .partners-block li {
+                width: 120px;
+                height: 100px;
+                margin: 0.5rem 1rem;
+            }
+
+            .partners-block img {
+                max-height: 100px;
+                max-width: 120px;
+            }
+
+            .info{
+                margin-left: 8%;
+            }
+
+            header .left {
+                margin-left: 20px;
+            }
+
+            header .left svg{
+                height: 40px;
+            }
+
+            .header-left {
+                margin-left: 20px;
+            }
+            .header-left svg {
+                height: 60px;
+            }
+
+            header .right {
+                font-size: 12px;
+            }
+
+            .block-about {
+                width: 95%;
+            }
+
+            .how-works h1 {
+                font-size: 18px !important;
+            }
+
+            .how-works ul {
+                width: 600px;
+            }
+
+            .how-works ul li {
+                width: 150px;
+            }
+
+            .for-accordion {
+                padding: 5rem 0;
+                margin: auto;
+                width: 70%;
+            }
+
+            @media screen and (max-width: 750px) {
+                .target-ul {
+                    width: 500px;
+                }
+                .target-ul li {
+                    margin: 5px 2.5px;
+                    list-style-type: none;
+                }
+                .target-ul li p {
+                    font-size: 16px !important;
+                }
+
+                .target-ul ul.nav {
+                    margin-bottom: 1.5rem !important;
+                }
+
+                .target-ul ul.nav li {
+                    width: 50%;
+                    list-style-type: none;
+                }
+
+                .target-ul ul.nav li h1 {
+                    font-size: 22px !important;
+                    line-height: 1.23;
+                }
+
+                .target-ul .nav.justify-content-center li{
+                    padding: 0 10px !important;
+                }
+
+                .target-img {
+                    height: 170px;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .header-left {
+                    margin-top: 10px;
+                    margin-left: 10px;
+                }
+                .header-left svg {
+                    height: 50px;
+                }
+
+                .how-works ul {
+                    width: 500px;
+                }
+
+                .how-works h1 {
+                    font-size: 14px !important;
+                }
+
+                .how-works img {
+                    width: 40px;
+                }
+
+                .how-works ul .arrow {
+                    width: 30px;
+                }
+
+                .arrow svg {
+                    width: 30px;
+                    margin-top: 40%;
+                }
+
+                .how-works ul li {
+                    width: 120px;
+                }
+
+
+                .not-found div {
+                    width: 400px;
+                }
+
+                .not-found h1 {
+                    font-size: 20px;
+                }
+
+                .not-found p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
