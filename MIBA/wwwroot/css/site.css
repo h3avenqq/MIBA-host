@@ -1583,3 +1583,81 @@ form .user-details .input-box {
         }
     }
 }
+
+/*Selecter*/
+
+.tabs {
+    font-size: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center
+}
+
+    .tabs > input[type="radio"] {
+        display: none;
+    }
+
+    .tabs > div {
+        /* скрыть контент по умолчанию */
+        display: none;
+        padding: 10px 15px;
+        border-top: 1px solid #ddd;
+    }
+
+/* отобразить контент, связанный с выбранной радиокнопкой (input type="radio") */
+#tab-btn-1:checked ~ #content-1,
+#tab-btn-2:checked ~ #content-2 {
+    display: block;
+    text-align: left !important;
+}
+
+.tabs > label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    user-select: none;
+    font-weight: 600;
+    padding: 2px 8px;
+    color: #bbb;
+    border: 1px solid transparent;
+    font-size:1.2rem;
+}
+.tabs > input[type="radio"]:checked + label {
+    font-size: 1.4rem;
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid #0d6efd;
+    border-bottom: 1px solid #f2f9fd;
+}
+@media screen and (max-width: 1200px) {
+    .registration{
+        width:70%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .registration {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .tabs > label {
+        font-size: 0.9rem;
+    }
+
+    .tabs > input[type="radio"]:checked + label {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .tabs > label {
+        font-size: 0.8rem;
+    }
+
+    .tabs > input[type="radio"]:checked + label {
+        font-size: 0.8rem;
+    }
+}
