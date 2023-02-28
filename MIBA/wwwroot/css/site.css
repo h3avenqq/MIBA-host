@@ -58,6 +58,11 @@ header .left {
     font-weight: 400;
 }
 
+.header-left img{
+    width: 20%;
+    pointer-events: none;
+}
+
 header .right{
     position: absolute;
     right: 10px;
@@ -240,7 +245,6 @@ hr {
 }
 
 .about .target-ul li {
-    margin: 10px 5px;
     list-style-type: none;
 }
 
@@ -258,7 +262,14 @@ hr {
 
 .about .target-ul ul.nav li{
     width: 50%;
+    height: 300px;
     list-style-type: none;
+}
+
+.target-ul img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about .target-ul ul.nav li h1{
@@ -268,22 +279,6 @@ hr {
 
 .about .target-ul ul.nav li p{
     font-size: 20px;
-}
-
-.target-img{
-    height: 220px;
-}
-
-.target-img.right {
-    width: 45% !important;
-    background-image: url('/media/rigth.png');
-    background-size: cover;
-}
-
-.target-img.left {
-    width: 45% !important;
-    background-image: url('/media/left.jpeg');
-    background-size: cover;
 }
 
 .missions {
@@ -296,7 +291,7 @@ hr {
 }
 
 .missions li{
-    width: 550px;
+    width: 50%;
     display: inline-block;
     vertical-align: top;
     margin-bottom: 10%;
@@ -443,7 +438,7 @@ hr {
 .process .for-num{
     z-index: 2;
     background-color: #fff;
-    left: 145px;
+    left: 40%;
     top: -35px;
     font-size: 20px;
     border: 2px solid #000;
@@ -535,70 +530,15 @@ hr {
     font-weight: 300;
 }
 
-.btn-new {
-  position: relative;
-  display: inline-block;
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  margin: 0px 25px 15px;
-  min-width: 150px;
-}
-
-.btn-new span {
-  position: relative;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 20px;
-  transition: 0.3s;
-}
-
-.btn-1::before {
-  background-color: #004dff;
-  transition: 0.3s ease-out;
-}
-
-.btn-1 span {
-  color: rgb(255,255,255);
-  border: 1px solid #004dff;
-  transition: 0.2s 0.1s;
-}
-
-.btn-1 span:hover {
-  color: #004dff;
-  background-color: #000;
-  transition: 0.2s 0.1s;
-}
-
-.btn-1:active, .btn-1:hover, .btn-1:focus {
-  outline: 0 !important;
-  outline-offset: 0;
-}
-
-.btn-1::before,
-.btn-1::after {
-  position: absolute;
-  content: "";
-}
-
-.btn-new.hover-filled-slide-left::before {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.btn-new.hover-filled-slide-left:hover::before {
-  width: 0%;
+.not-found .btn{
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+    color: #fff;
+    background-color: #1c36ff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .how-works h1 {
@@ -610,26 +550,22 @@ hr {
     text-align: center;
 }
 
-.how-works div{
-    margin-left: 200px;
-}
-
 .how-works ul {
     text-align: center;
 	list-style-type: none; 
 	font-size: 16px;
-    width: 1200px;
+    width: 90%;
     margin: auto;
 }
 .how-works ul li {
     font-weight: 600;
     font-size: 18px;
     line-height: 1.35;
-    width: 300px;
+    width: 30%;
     margin-bottom: 3rem;
 }
 .how-works ul .arrow{
-    width: 80px;
+    width: 3%;
 }
 
 .arrow svg{
@@ -1446,26 +1382,14 @@ form .user-details .input-box {
     background-color: #87CEFA;
 }
 
-@media screen and (max-width: 1835px) {
-    .missions li{
-        width: 500px !important;
-    }
-    @media screen and (max-width: 1669px) {
-        .missions li {
-            width: 400px !important;
-        }
-    }
+.logo-svg {
+    height: 100px !important;
+    width: 200px;
 }
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1300px) {
     .block-about {
         width: 80%;
-    }
-
-    .partners-block li {
-        width: 150px;
-        height: 100px;
-        margin: 1rem 2rem;
     }
 
     .partners-block img {
@@ -1477,36 +1401,16 @@ form .user-details .input-box {
         .block-about {
             width: 90%;
         }
+
         .how-works h1 {
             margin-bottom: 2rem;
             font-size: 25px;
         }
-        .how-works ul {
-            font-size: 14px;
-            width: 800px;
-            margin: auto;
-        }
 
         .how-works ul li {
-            font-weight: 600;
             font-size: 16px;
-            line-height: 1.35;
-            width: 225px;
         }
 
-        .how-works ul .arrow {
-            width: 50px;
-        }
-
-        .arrow svg {
-            width: 50px;
-            margin-top: 40%;
-        }
-    }
-    @media screen and (max-width: 1000px) {
-        .target-ul{
-            width: 700px;
-        }
         @media screen and (max-width: 800px) {
             .partners-block li {
                 width: 120px;
@@ -1519,23 +1423,12 @@ form .user-details .input-box {
                 max-width: 120px;
             }
 
-            .info{
+            .info {
                 margin-left: 8%;
-            }
-
-            header .left {
-                margin-left: 20px;
-            }
-
-            header .left svg{
-                height: 40px;
             }
 
             .header-left {
                 margin-left: 20px;
-            }
-            .header-left svg {
-                height: 60px;
             }
 
             header .right {
@@ -1550,14 +1443,6 @@ form .user-details .input-box {
                 font-size: 18px !important;
             }
 
-            .how-works ul {
-                width: 600px;
-            }
-
-            .how-works ul li {
-                width: 150px;
-            }
-
             .for-accordion {
                 padding: 5rem 0;
                 margin: auto;
@@ -1565,245 +1450,133 @@ form .user-details .input-box {
             }
 
             @media screen and (max-width: 750px) {
-                .target-ul {
-                    width: 500px;
-                }
-                .target-ul li {
-                    margin: 5px 2.5px;
-                    list-style-type: none;
-                }
                 .target-ul li p {
                     font-size: 16px !important;
                 }
 
-                .target-ul ul.nav {
-                    margin-bottom: 1.5rem !important;
-                }
-
-                .target-ul ul.nav li {
-                    width: 50%;
-                    list-style-type: none;
-                }
-
-                .target-ul ul.nav li h1 {
-                    font-size: 22px !important;
-                    line-height: 1.23;
-                }
-
-                .target-ul .nav.justify-content-center li{
-                    padding: 0 10px !important;
-                }
-
-                .target-img {
-                    height: 170px;
-                }
-            }
-
-            @media screen and (max-width: 600px) {
-                .header-left {
-                    margin-top: 10px;
-                    margin-left: 10px;
-                }
-                .header-left svg {
-                    height: 50px;
-                }
-
-                .how-works ul {
-                    width: 500px;
-                }
-
-                .how-works h1 {
-                    font-size: 14px !important;
-                }
-
-                .how-works img {
-                    width: 40px;
-                }
-
-                .how-works ul .arrow {
-                    width: 30px;
-                }
-
-                .arrow svg {
-                    width: 30px;
-                    margin-top: 40%;
-                }
-
-                .how-works ul li {
-                    width: 120px;
-                }
-
-
-                .not-found div {
-                    width: 400px;
-                }
-
-                .not-found h1 {
-                    font-size: 20px;
-                }
-
-                .not-found p {
-                    font-size: 16px;
-                }
-
-                @media screen and (max-width: 500px) {
-                    .mis-num{
-                        width: 90% !important;
-                    }
-                    .how-works ul li {
-                        width: 100px;
-                    }
-
-                    .how-works ul .arrow {
-                        width: 25px;
-                    }
-
-                    .arrow svg {
-                        width: 25px;
-                        margin-top: 40%;
-                    }
-
-                    .how-works ul {
-                        width: 370px;
+                @media screen and (max-width: 600px) {
+                    .how-works .arrow svg{
+                        margin-top: 100%;
+                        width: 40px;
                     }
 
                     .how-works h1 {
-                        font-size: 12px !important;
-                    }
-
-                    .for-text {
                         font-size: 14px !important;
                     }
 
-                    .for-num {
-                        left: 110px !important;
-                    }
-
-                    .target-ul {
+                    .not-found div {
                         width: 400px;
                     }
 
-                    .target-ul li {
-                        margin: 3px 1.5px;
-                        list-style-type: none;
-                    }
-
-                    .target-ul li p {
-                        font-size: 14px !important;
-                    }
-
-                    .target-ul ul.nav {
-                        margin-bottom: 1.5rem !important;
-                    }
-
-                    .target-ul ul.nav li {
-                        width: 180px !important;
-                        list-style-type: none;
-                    }
-
-                    .target-ul ul.nav li h1 {
-                        font-size: 20px !important;
-                        line-height: 1.23;
-                    }
-
-                    .target-ul .nav.justify-content-center li {
-                        padding: 0 5px !important;
-                    }
-
-                    .target-img {
-                        height: 170px;
-                    }
-
-                    .map iframe {
-                        width: 400px;
-                        height: 300px;
-                    }
-
-                    .info {
-                        width: 400px !important;
-                        margin-left: 10px;
-                    }
-
-                    .info h1 {
-                        font-size: 40px;
-                    }
-
-                    .study-branches h1{
-                        font-size: 25px;
-                    }
-                    .create-block h1 {
-                        font-size: 25px;
-                    }
-                    .create-block p{
+                    .not-found h1 {
                         font-size: 20px;
                     }
 
-                    @media screen and (max-width: 410px){
-                        .map iframe {
-                            width: 350px !important;
+                    .not-found p {
+                        font-size: 16px;
+                    }
+
+                    .main-block h1 {
+                        font-size: 25px;
+                    }
+
+                    .main-block p {
+                        font-size: 18px;
+                    }
+
+                    .head-of-block {
+                        padding-left: 0 !important;
+                        width: 95% !important;
+                        margin-bottom: 5% !important;
+                    }
+
+                    header .right {
+                        width: 25%;
+                        max-width: 30%;
+                        float: left;
+                    }
+
+                    .target-ul ul.nav li {
+                        height: 200px !important;
+                    }
+
+                    .about .target-ul ul.nav li h1 {
+                        font-size: 20px;
+                        line-height: 1.23;
+                    }
+
+                    .about .target-ul ul.nav li p {
+                        font-size: 14px !important;
+                    }
+
+                    .missions li{
+                        width: 60%;
+                    }
+
+                    .map{
+                        width: 90%;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        .how-works .arrow svg {
+                            margin-top: 200%;
+                            width: 25px;
                         }
 
-                        .target-ul {
-                            width: 320px !important;
+                        .how-works h1 {
+                            font-size: 12px !important;
                         }
 
-                        .target-ul ul.nav li{
-                            width: 140px !important;
+                        .for-text {
+                            font-size: 14px !important;
                         }
 
-                        .for-num {
-                            left: 90px !important;
+                        .info {
+                            width: 400px !important;
+                            margin-left: 10px;
+                        }
+
+                        .info h1 {
+                            font-size: 40px;
+                        }
+
+                        .study-branches h1 {
+                            font-size: 25px;
+                        }
+
+                        .create-block h1 {
+                            font-size: 25px;
+                        }
+
+                        .create-block p {
+                            font-size: 20px;
+                        }
+                        @media screen and (max-width: 390px){
+                            .info{
+                                width: 300px;
+                            }
+                            .info h1 {
+                                font-size: 30px;
+                            }
+
+                            .process .for-text{
+                                height: 300px;
+                            }
+                            .how-works .arrow svg {
+                                margin-top: 200%;
+                                width: 25px;
+                            }
+                            .how-works li img {
+                                width: 40px;
+                            }
+                            .about .target-ul ul.nav li p {
+                                font-size: 12px !important;
+                            }
                         }
                     }
                 }
             }
         }
-    }
-}
-@media screen and (max-width: 570px) {
-    .target-ul {
-        width: 380px;
-    }
-
-    .target-ul li {
-        margin: 3px 1.5px;
-        list-style-type: none;
-    }
-
-    .target-ul li p {
-        font-size: 14px !important;
-    }
-
-    .target-ul ul.nav {
-        margin-bottom: 1.5rem !important;
-    }
-
-    .target-ul ul.nav li {
-        width: 170px !important;
-        list-style-type: none;
-    }
-
-    .target-ul ul.nav li h1 {
-        font-size: 20px !important;
-        line-height: 1.23;
-    }
-
-    .target-ul .nav.justify-content-center li {
-        padding: 0 5px !important;
-    }
-
-    .target-img {
-        height: 170px;
-    }
-
-    header {
-        width: 400px;
-    }
-
-    header .right {
-        width: 30%;
-        max-width: 30%;
-        float: left;
     }
 }
 
