@@ -149,6 +149,16 @@ window.onload = function () {
             autoplayHoverPause: true
         });
     });
+
+    var width = window.innerWidth;
+    var arr = document.querySelectorAll(".img-block");
+    arr.forEach(item => {
+        item.style.width = (width / 1920 * 300).toString() + "px";
+        item.style.height = (width / 1920 * 300).toString() + "px";
+        item.style.padding = (width / 1920 * 1).toString() + "rem";
+    });
+    document.querySelector(".first-image .img-block").style.width = (width / 1920 * 600).toString() + "px";
+    document.querySelector(".first-image .img-block").style.height = (width / 1920 * 600).toString() + "px";
 }
 
 window.addEventListener("resize", function () {

@@ -5,9 +5,12 @@
 
 <partial name="_Notifications" />
 
-<div class="reviews-btn" data-modal-btn="modal_rev_anon">
+@if (Model.Feedbacks.Count != 0){
+    <div class="reviews-btn" data-modal-btn="modal_rev_anon">
     <p>Отзывы</p>
-</div>
+    </div>
+}
+
 
 <div class="background" data-modal-window="modal_rev_anon">
     <div class="feedback" id="reviews">
@@ -15,6 +18,7 @@
             <h1>Отзывы</h1>
             <hr class="h_line" />
         </div>
+
     @foreach(var review in Model.Feedbacks)
     {
         <div class="feedback-block">
