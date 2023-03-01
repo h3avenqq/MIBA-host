@@ -79,7 +79,7 @@ function addFinalData() {
     var number = 1;
     for (var i = 0; i < arrayCh.length; i++) {
         if (!arrayCh[i].classList.contains("hidden")) {
-            document.getElementById("outer-programs").value += "<li>Раздел " + (number).toString() + ". " + arrayCh[i].innerHTML + "</li>";
+            document.getElementById("outer-programs").value += "<li><b>Раздел " + (number).toString() + "</b>. " + arrayCh[i].innerHTML + "</li>";
             number++;
         }
     }
