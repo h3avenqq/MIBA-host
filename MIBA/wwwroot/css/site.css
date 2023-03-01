@@ -1551,7 +1551,7 @@ form .user-details .input-box {
                         .create-block p {
                             font-size: 20px;
                         }
-                        @media screen and (max-width: 390px){
+                        @media screen and (max-width: 420px){
                             .info{
                                 width: 300px;
                             }
