@@ -1096,6 +1096,10 @@ form .user-details .input-box {
     max-width: 500px;
 }
 
+.lectors-div a svg,.chapter-div a svg{
+    cursor: pointer;
+}
+
 .form-select {
     height: 45px;
     width: 100%;
