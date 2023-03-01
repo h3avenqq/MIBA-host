@@ -2,6 +2,7 @@
 @model StudiesAndRegs
 @{
     Layout = "~/Views/Shared/_CourseLayout.cshtml";
+    ViewData["Title"] = Model.Studies.Title;
 }
 
 <partial name="_Notifications" />
@@ -59,8 +60,8 @@
 
 
 
-            <a href="" class="btn btn-primary">ЗАПИСАТЬСЯ</a>
-            <a href="" class="btn outline-btn">ОСТАВИТЬ ОТЗЫВ</a>
+            <a href="#registr" class="btn btn-primary">ЗАПИСАТЬСЯ</a>
+            <a href="#feedback" class="btn outline-btn">ОСТАВИТЬ ОТЗЫВ</a>
 
         </div>
     </div>
@@ -147,7 +148,7 @@
         </ul>
     </div>
 
-    <div class="registration-container">
+    <div id="registr" class="registration-container">
         <div class="registration">
 
             <h1>Записаться на курс</h1>
@@ -262,7 +263,7 @@
         </div>
         <hr />
 
-    <div class="registration">
+    <div id="feedback" class="registration">
         <h1>Оставить отзыв</h1>
         <form method="post" asp-action="Feedback">
                 <input id="StudiesId" asp-for="Studies.Id" name="StudiesId" hidden />
