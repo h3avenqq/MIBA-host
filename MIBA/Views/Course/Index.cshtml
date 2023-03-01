@@ -1,4 +1,5 @@
-﻿@model StudiesAndRegs
+﻿@using System.Globalization
+@model StudiesAndRegs
 @{
     Layout = "~/Views/Shared/_CourseLayout.cshtml";
 }
@@ -47,7 +48,11 @@
 
             <div class="course-info">
                 <p>Формат обучения: @(Model.Studies.StudyFormat == MIBA.Enums.StudyFormat.Distant ? "Заочно" : "Очно")</p>
-                <p>Ближайший период проведения: @Model.Studies.StartTime.ToString("dd/mm/yyyy") - @Model.Studies.EndTime.ToString("dd/mm/yyyy")</p>
+                <p>Ближайший период проведения: 
+                    @(Model.Studies.StartTime.Month == Model.Studies.EndTime.Month && Model.Studies.StartTime.Year == Model.Studies.EndTime.Year?
+                    $"{Model.Studies.StartTime.Day.ToString("d")} - {Model.Studies.EndTime.ToString("d MMMM yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))} г." :
+                    $"{Model.Studies.StartTime.ToString("dd/MM/yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))} - {@Model.Studies.EndTime.ToString("dd/MM/yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))}")
+                </p>
                 <p>Стоимость: @Model.Studies.Cost ₽</p>
                 <p>Выдаваемый документ: @Model.Studies.DocumentAfter</p>
             </div>
