@@ -59,7 +59,7 @@ header .left {
 }
 
 .header-left img{
-    width: 20%;
+    width: 400px;
     pointer-events: none;
 }
 
@@ -132,18 +132,17 @@ hr {
 
 
 .info{
-    width: 500px;
+    max-width: 700px;
     margin-left: 15%;
 }
 
 .course-info {
-    width: 700px;
-    margin-left: 15%;
+    
 }
 
 .info h1{
     color: #fff;
-    font-size: 45px;
+    font-size: 62px;
     line-height: 1.23;
     font-weight: 600;
 }
@@ -841,8 +840,8 @@ footer li{
     font-size: 66px;
 }
 
-.course-block p{
-    width: 850px;
+.course-block .info{
+    width: 100%;
 }
 
 .course-block .info a{
@@ -1457,6 +1456,14 @@ form .user-details .input-box {
             @media screen and (max-width: 750px) {
                 .target-ul li p {
                     font-size: 16px !important;
+                }
+
+                .info h1{
+                    font-size: 42px;
+                }
+
+                .info{
+                    width: 500px;
                 }
 
                 @media screen and (max-width: 600px) {
