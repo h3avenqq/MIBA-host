@@ -1057,6 +1057,25 @@ footer li{
     margin-top: 20px;
 }
 
+.buttons_add_html{
+    display: flex;
+}
+
+.btn-for-add {
+    background-color: #096cf7cc;
+    margin: -20px 2px 15px 2px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+    .btn-for-add:hover {
+        color: #fff;
+        background-color: #0b68f4;
+    }
+
 form .user-details .input-box {
     margin-bottom: 15px;
     width: 100%;

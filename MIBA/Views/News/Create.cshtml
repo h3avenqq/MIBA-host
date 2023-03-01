@@ -42,7 +42,15 @@
 
         <div class="input-box">
             <span asp-validation-for="Description" class="details">Содержание</span>
-            <textarea asp-for="Description" class="brief-textarea" name="Description" type="text" rows="6" required></textarea>
+            <textarea id="for-add" asp-for="Description" class="brief-textarea" name="Description" type="text" rows="6" required></textarea>
+        </div>
+
+        <div class="buttons_add_html">
+            <a class="btn-for-add" onclick="AddTag('strong')">Жирный шрифт</a>
+            <a class="btn-for-add" onclick="AddTag('curs')">Курсив</a>
+            <a class="btn-for-add" onclick="AddTag('br')">Перенос строки</a>
+            <a class="btn-for-add" onclick="AddTag('href')">Гиперссылка</a>
+            <a class="btn-for-add" onclick="AddTag('img')">Фото</a>
         </div>
 
         <div class="file-button">

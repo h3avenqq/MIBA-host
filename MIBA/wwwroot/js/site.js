@@ -239,3 +239,17 @@ document.addEventListener('DOMContentLoaded', function () {
         btnClose: 'modal_rev__close'
     })
 }, false);
+
+function AddTag(tag) {
+    var input = document.getElementById("for-add");
+    if (tag == "strong")
+        input.value += "<strong>Текст</strong>";
+    else if (tag == "curs")
+        input.value += "<i>Текст</i>";
+    else if (tag == "br")
+        input.value += "<br>";
+    else if (tag == "href")
+        input.value += '<a href="Ссылка">Текст</a>';
+    else if (tag == "img")
+        input.value += '<img width="Ширина" height="Высота" src="Ссылка" />';
+}
