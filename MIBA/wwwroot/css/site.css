@@ -1473,7 +1473,11 @@ form .user-details .input-box {
                 }
 
                 @media screen and (max-width: 600px) {
-                    .how-works .arrow svg{
+                    .header-left img{
+                        width: 250px !important;
+                    }
+
+                    .how-works .arrow svg {
                         margin-top: 100%;
                         width: 40px;
                     }
