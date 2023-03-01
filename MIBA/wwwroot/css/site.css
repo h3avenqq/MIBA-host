@@ -977,12 +977,13 @@ footer li{
 
 .lectors ul li{
     width: 20%;
+    padding-top: 50px;
 }
 
 .lector-name p{
     font-weight: 600;
     font-size: 26px;
-    margin-top: 120px;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -1701,4 +1702,12 @@ form .user-details .input-box {
     .tabs > input[type="radio"]:checked + label {
         font-size: 0.8rem;
     }
+}
+
+.lectors ul li img {
+    height: 280px;
+    width: 280px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
 }

@@ -44,6 +44,7 @@
         <thead class="reg-table-head">
             <tr>
                 <th>Id</th>
+                <th>Фото</th>
                 <th>Полное имя</th>
                 <th>Информация</th>
             </tr>
@@ -54,6 +55,9 @@
                 <tr>
                     <td>
                         @obj.Id
+                    </td>
+                    <td>
+                        <img class="news-photo-crop" src="@obj.PhotoUrl" \>
                     </td>
                     <td>
                         @obj.FullName

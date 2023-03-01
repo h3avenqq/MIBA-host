@@ -1,16 +1,22 @@
 ﻿using MIBA.Data;
 using MIBA.Models;
-using MIBA.Services.HashService;
+using MIBA.Services.SaveFileService;
 using Microsoft.AspNetCore.Mvc;
+using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace MIBA.Controllers
 {
     public class LectorsController : Controller
     {
         private readonly ApplicationDbContext _db;
-        public LectorsController(ApplicationDbContext db)
+        private readonly ISaveFileService _saveFile;
+        private readonly IWebHostEnvironment _appEnvironment;
+
+        public LectorsController(ApplicationDbContext db, IWebHostEnvironment appEnvironment, ISaveFileService saveFile)
         {
             _db = db;
+            _saveFile = saveFile;
+            _appEnvironment = appEnvironment;
         }
         public IActionResult Index()
         {
@@ -25,16 +31,29 @@ namespace MIBA.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Lectors obj)
+        public async Task<IActionResult> Create(LectorsRequest request)
         {
             if (ModelState.IsValid)
             {
-                _db.Lectors.Add(obj);
+                var entity = new Lectors(request);
+
+                entity.PhotoUrl = null;
+                if (request.Photo != null)
+                {
+                    entity.PhotoUrl = await _saveFile.SaveFile(_appEnvironment.WebRootPath, "/media/NewsMedia/", request.Photo);
+                }
+                else if (request.PhotoUrl != null)
+                {
+                    entity.PhotoUrl = request.PhotoUrl;
+                }
+
+                _db.Lectors.Add(entity);
                 _db.SaveChanges();
                 TempData["success"] = "Лектор успешно добавлен";
                 return RedirectToAction("Index");
             }
-            return View(obj);
+
+            return View(request);
         }
 
         public IActionResult Edit(int? id)
@@ -50,21 +69,40 @@ namespace MIBA.Controllers
                 return NotFound();
             }
 
-            return View(objFromDb);
+            var entity = new LectorsRequest(objFromDb);
+
+            return View(entity);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Lectors obj)
+        public async Task<IActionResult> Edit(LectorsRequest request)
         {
             if (ModelState.IsValid)
             {
-                _db.Lectors.Update(obj);
+                var entity = _db.Lectors.Find(request.Id);
+
+                if (entity == null)
+                    return View(request);
+
+                entity.FullName = request.FullName;
+                entity.About = request.About;
+                entity.Studies = request.Studies;
+
+                if (request.Photo != null)
+                {
+                    entity.PhotoUrl = await _saveFile.SaveFile(_appEnvironment.WebRootPath, "/media/NewsMedia/", request.Photo);
+                }
+                else if (request.PhotoUrl != null)
+                {
+                    entity.PhotoUrl = request.PhotoUrl;
+                }
+
                 _db.SaveChanges();
                 TempData["success"] = "Лектор успешно изменена";
                 return RedirectToAction("Index");
             }
-            return View(obj);
+            return View(request);
         }
 
         public IActionResult Delete(int? id)
