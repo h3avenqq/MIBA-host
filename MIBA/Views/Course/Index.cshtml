@@ -54,7 +54,7 @@
                     $"{Model.Studies.StartTime.Day.ToString("d")} - {Model.Studies.EndTime.ToString("d MMMM yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))} г." :
                     $"{Model.Studies.StartTime.ToString("dd/MM/yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))} - {@Model.Studies.EndTime.ToString("dd/MM/yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))}")
                 </p>
-                <p>Стоимость: @Model.Studies.Cost ₽</p>
+                <p>Стоимость: @Model.Studies.Cost.ToString("#,#", CultureInfo.CreateSpecificCulture("ru-RU")) ₽</p>
                 <p>Выдаваемый документ: @Model.Studies.DocumentAfter</p>
             </div>
 
