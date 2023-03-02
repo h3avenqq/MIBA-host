@@ -84,7 +84,7 @@ hr {
 }
 
 .top {
-    background-color: rgba(61, 61, 61, 0.658);
+    /*background-color: rgba(61, 61, 61, 0.658);*/
     background-blend-mode: multiply;
     background-image: url('/media/top.jpg');
     background-repeat: no-repeat;
@@ -1742,4 +1742,8 @@ form .user-details .input-box {
     object-fit: cover;
     margin: auto;
     display: block;
+}
+
+.btn-color {
+    background-color: #1c7b9b !important;
 }
