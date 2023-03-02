@@ -1112,12 +1112,44 @@ form .user-details .input-box {
     border-radius: 10px;
     padding: 10px;
     margin-top: 10px;
-    min-width: 200px;
-    max-width: 500px;
 }
 
 .lectors-div a svg,.chapter-div a svg{
     cursor: pointer;
+}
+
+.chapter-div .btns{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.modal_edit_content {
+    position: fixed;
+    max-width: 70%;
+    width: 100%;
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 1rem;
+    z-index: 99999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal_edit_content div{
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 10px;
+    float:left;
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    margin-right: 30px;
+    border-radius: 15px;
+}
+
+.modal_edit_content div:hover{
+    background-color: #0d6efd;
 }
 
 .form-select {
@@ -1204,7 +1236,7 @@ form .user-details .input-box {
     visibility: visible;
 }
 
-.modal {
+.modal1 {
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.6);

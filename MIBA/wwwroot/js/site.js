@@ -24,6 +24,60 @@ window.onclick = function (event) {
     }
 }
 
+function close_pop_up(id) {
+    let modal = document.querySelector("[data-modal-window= 'modal_change_" + id + "']");
+    modal.style.display = "none";
+    document.getElementById("temp").classList.remove("body-stop-scroll");
+}
+
+function addTextToEditor(id) {
+    var elem = document.getElementById(id).innerText;
+    var sec_id = "placeholder_" + id;
+    document.getElementById(sec_id).value = elem.trim();
+}
+
+function addTextToMain(id) {
+    var sec_id = "placeholder_" + id;
+
+    var div_main = document.getElementById(id);
+    var div = document.createElement("div");
+    div.classList.add("nav");
+    div.classList.add("chapter-div");
+    div.id = id;
+    var li = document.createElement("li");
+    li.classList.add("chapter");
+    li.id = id + "li";
+    li.innerHTML = document.getElementById(sec_id).value;
+    var d = document.createElement("div");
+    d.className = "btns";
+    d.innerHTML = '<a onclick="addTextToEditor(' + id + ')" data-modal-btn="modal_change_' + id + '"> <div class="text-decoration-none btn btn-warning"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" /> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" /> </svg> </div> </a>'
+    d.innerHTML += '<a onclick="addHidden(' + id + ')"><svg xmlns = "http://www.w3.org/2000/svg" width = "30" height = "30" fill = "red" class= "bi bi-x-circle-fill" viewBox = "0 0 16 16" > <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" /></svg ></a>';
+    d.innerHTML += '<div data-modal-window="modal_change_' + id + '" class="modal1"> <div class="modal_edit_content"> <input id="placeholder_' + id + '" placeholder="Программа курса"> <div onclick="addTextToMain(' + id + ')" class="close_modal_window">Сохранить</div> <div class="close_modal_window">Отмена</div>  </div> </div>'
+    div.appendChild(li);
+    div.appendChild(d);
+    div_main.innerHTML = div.innerHTML;
+    let a_btns = document.querySelectorAll("*[data-modal-btn]");
+
+    for (let i = 0; i < a_btns.length; i++) {
+        a_btns[i].addEventListener('click', function () {
+            let name = a_btns[i].getAttribute('data-modal-btn');
+            let modal = document.querySelector("[data-modal-window='" + name + "']");
+            modal.style.display = "block";
+            document.getElementById("temp").classList.add("body-stop-scroll");
+            let close = modal.querySelector(".close_modal_window");
+            close.addEventListener('click', function () {
+                modal.style.display = "none";
+                document.getElementById("temp").classList.remove("body-stop-scroll");
+            });
+        });
+    }
+    let modals = document.querySelectorAll('*[data-modal-window]');
+    for (let i = 0; i < modals.length; i++) {
+        modals[i].style.display = "none";
+        document.getElementById("temp").classList.remove("body-stop-scroll");
+    }
+}
+
 function filterNewCourse(filter) {
     document.querySelector(".filter.active").classList.remove("active");
     document.querySelector("." + filter).classList.add("active");
@@ -108,15 +162,32 @@ function addChapter() {
     li.classList.add("chapter");
     li.id = (chapters + 1000).toString() + "li";
     li.innerHTML = text;
-    var a1 = document.createElement("a");
-    a1.innerHTML = '<a onclick="" style="margin-top: 20px; margin-left: 20px"> <div class="text-decoration-none btn btn-warning"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" /> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" /> </svg> </div> </a>'
-    var a2 = document.createElement("a");
-    a2.innerHTML = '<a onclick="addHidden(' + (chapters + 1000).toString() + ')" style="margin-top: 20px; margin-left: 20px;"><svg xmlns = "http://www.w3.org/2000/svg" width = "30" height = "30" fill = "red" class= "bi bi-x-circle-fill" viewBox = "0 0 16 16" > <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" /></svg ></a>';
+    var a1 = document.createElement("div");
+    a1.className = "btns";
+    a1.innerHTML = '<a onclick="addTextToEditor(' + (chapters + 1000).toString() + ')" data-modal-btn="modal_change_' + (chapters + 1000).toString() + '"> <div class="text-decoration-none btn btn-warning"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" /> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" /> </svg> </div> </a>'
+    a1.innerHTML += '<a onclick="addHidden(' + (chapters + 1000).toString() + ')"><svg xmlns = "http://www.w3.org/2000/svg" width = "30" height = "30" fill = "red" class= "bi bi-x-circle-fill" viewBox = "0 0 16 16" > <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" /></svg ></a>';
+    a1.innerHTML += '<div data-modal-window="modal_change_' + (chapters + 1000).toString() + '" class="modal1"> <div class="modal_edit_content"> <input id="placeholder_' + (chapters + 1000).toString() + '" placeholder="Программа курса"> <div onclick="addTextToMain(' + (chapters + 1000).toString() + ')" class="close_modal_window">Сохранить</div> <div class="close_modal_window">Отмена</div>  </div> </div>'
     div.appendChild(li);
     div.appendChild(a1);
-    div.appendChild(a2);
     ul.appendChild(div);
     document.getElementById("chapter").value = "";
+
+
+    let a_btns = document.querySelectorAll("*[data-modal-btn]");
+
+    for (let i = 0; i < a_btns.length; i++) {
+        a_btns[i].addEventListener('click', function () {
+            let name = a_btns[i].getAttribute('data-modal-btn');
+            let modal = document.querySelector("[data-modal-window='" + name + "']");
+            modal.style.display = "block";
+            document.getElementById("temp").classList.add("body-stop-scroll");
+            let close = modal.querySelector(".close_modal_window");
+            close.addEventListener('click', function () {
+                modal.style.display = "none";
+                document.getElementById("temp").classList.remove("body-stop-scroll");
+            });
+        });
+    }
 }
 
 function addLector() {
