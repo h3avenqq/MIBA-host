@@ -1702,7 +1702,11 @@ form .user-details .input-box {
                                 left: 40%;
                             }
 
-                            @media screen and (max-width: 350px){
+                            .how-works ul li p{
+                                font-size: 12px;
+                            }
+
+                            @media screen and (max-width: 350px) {
                                 .process .for-text {
                                     height: 400px;
                                 }
