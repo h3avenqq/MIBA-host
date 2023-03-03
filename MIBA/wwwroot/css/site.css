@@ -1,3 +1,7 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
 html::-webkit-scrollbar {
     display: none;
 }
@@ -14,6 +18,7 @@ header {
     background-color: transparent;
     height: 80px;
     display: flex;
+    color: #fff;
     mix-blend-mode: difference;
     align-items: center;
     position: fixed;
@@ -238,6 +243,7 @@ hr {
 .about h1{
     font-size: 36px;
     line-height: 52px;
+    font-weight: 600;
 }
 
 .about p{
@@ -312,7 +318,6 @@ hr {
     z-index: 2;
     position: relative;
     padding-top: 50px;
-    padding-bottom: 4px;
     margin-bottom: 0;
     margin-left: 0 !important;
 }
@@ -324,7 +329,7 @@ hr {
 
 .mis-top p {
     font-weight: 700 !important;
-    font-size: 22px !important;
+    font-size: 20px !important;
     line-height: 1.35;
 }
 
@@ -420,7 +425,6 @@ hr {
 .process {
     display: block;
     margin: auto;
-    width: 80%;
 }
 
 .process h1{
@@ -432,11 +436,8 @@ hr {
     margin-left: auto;
 }
 
-.process ul{
-}
-
 .process li{
-    width: 350px;
+    width: 360px;
     margin: 20px 30px;
     position: relative;
 }
@@ -457,12 +458,12 @@ hr {
     z-index: 1;
     width: 100%;
     border: 1px solid #e0e0e0;
-    padding: 20px;
+    padding: 30px;
     padding-top: 50px;
-    font-size: 18px;
-    height: 250px;
-    line-height: 1.35;
-    font-weight: 600;
+    font-size: 15px;
+    height: 310px;
+    line-height: 1.75;
+    font-weight: 700;
 }
 
 .for-text notstrong{
@@ -471,7 +472,9 @@ hr {
 }
 
 .for-text h2{
+    padding-top: 5%;
     font-size: 22px;
+    font-weight: 600;
     text-align: center;
 }
 
@@ -537,7 +540,7 @@ hr {
 }
 
 .not-found .btn{
-    width: 200px;
+    width: 250px;
     height: 60px;
     border-radius: 50px;
     color: #fff;
@@ -643,6 +646,29 @@ footer li{
     display: flex;
     align-items: center;
     margin: 2rem 5rem;
+}
+
+footer .for-site{
+    text-decoration: none;
+    color: #fff !important;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+footer .for-site:hover{
+    color: #fff;
+    background-size: 100% 2px;
+}
+
+footer .for-site-svg{
+    margin-left: 2.5px;
+    height: 25.5px;
+    width: 25.5px;
+    border-radius: 50%;
+    border: 2.5px solid #fff;
 }
 
 #menuToggle {
@@ -1459,6 +1485,14 @@ form .user-details .input-box {
         max-width: 150px;
     }
 
+    .process li {
+        width: 320px;
+    }
+
+    .process .for-text{
+        font-size: 12px;
+    }
+
     @media screen and (max-width: 1100px) {
         .block-about {
             width: 90%;
@@ -1470,6 +1504,19 @@ form .user-details .input-box {
         }
 
         .how-works ul li {
+            font-size: 16px;
+        }
+
+        .process li{
+            margin-bottom: 3rem;
+            width: 80%;
+        }
+
+        .process .for-num {
+            left: 45%;
+        }
+
+        .process .for-text {
             font-size: 16px;
         }
 
@@ -1649,6 +1696,16 @@ form .user-details .input-box {
                             }
                             .about .target-ul ul.nav li p {
                                 font-size: 12px !important;
+                            }
+
+                            .process .for-num {
+                                left: 40%;
+                            }
+
+                            @media screen and (max-width: 350px){
+                                .process .for-text {
+                                    height: 400px;
+                                }
                             }
                         }
                     }
