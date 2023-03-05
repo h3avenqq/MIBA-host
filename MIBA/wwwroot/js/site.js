@@ -308,7 +308,13 @@ document.addEventListener('DOMContentLoaded', function () {
         modal: '.modal_rev_anon',
         btnOpen: '.modal_rev_anon',
         btnClose: 'modal_rev__close'
-    })
+    });
+
+    modalController({
+        modal: '.modal_doc',
+        btnOpen: '.modal_doc_open',
+        btnClose: '.modal_doc__close'
+    });
 }, false);
 
 function AddTag(tag) {

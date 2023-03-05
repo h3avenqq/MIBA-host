@@ -21,7 +21,13 @@ namespace MIBA.Controllers
 
         public IActionResult Index()
         {
-            return View(new CategoriesNewCourseNews { Categories = _db.StudyCategories.Include(x => x.Studies).ToList(), News = _db.News.ToList(), NewCourse = new NewCourse() });
+            return View(new CategoriesNewCourseNews 
+            { 
+                Categories = _db.StudyCategories.Include(x => x.Studies).ToList(), 
+                News = _db.News.ToList(), 
+                NewCourse = new NewCourse(), 
+                Documents = _db.Documents.ToList() 
+            });
         }
 
         public async Task<IActionResult> NewCourseRequest(NewCourse obj)

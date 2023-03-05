@@ -26,6 +26,7 @@ namespace MIBA.Controllers
             studAndRegs.RegistrationJudic = new RegistrationJudic();
             studAndRegs.Feedback = new Feedback();
             studAndRegs.Feedbacks = _db.Feedbacks.Where(x => x.StudiesId == id).ToList();
+            studAndRegs.Documents = _db.Documents.ToList();
 
             return View(studAndRegs);
         }

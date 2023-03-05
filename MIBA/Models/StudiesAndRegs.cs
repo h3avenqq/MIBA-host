@@ -8,5 +8,6 @@
         public Feedback Feedback { get; set; }
 
         public IList<Feedback> Feedbacks { get; set; }
+        public IList<Documents> Documents { get; set; }
     }
 }

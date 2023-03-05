@@ -1808,3 +1808,13 @@ form .user-details .input-box {
 .btn-color {
     background-color: #1c7b9b !important;
 }
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.documents svg{
+    fill: #000;
+    width: 30px;
+    height: 30px;
+}
