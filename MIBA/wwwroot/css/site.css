@@ -135,10 +135,6 @@ hr {
     color: gray;
 }
 
-.course-block .info{
-    max-width: 100%;
-}
-
 .info{
     max-width: 700px;
     margin-left: 15%;
@@ -1956,6 +1952,36 @@ form .user-details .input-box {
         width: 190px !important;
         height: 61px !important;
     }
+
+    .course-block p {
+        font-size: 20px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+
+    .course-block .info h1 {
+        font-size: 38px;
+    }
+
+    .info .btn {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .course-block p {
+        font-size: 20px;
+        margin-bottom: 13px;
+        line-height: 1.5;
+    }
+
+    .course-block .info h1 {
+        font-size: 40px;
+    }
+
+    .info .btn {
+        margin-top: 1rem;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -1978,11 +2004,81 @@ form .user-details .input-box {
     .course-program{
         width: 77%;
     }
+
+    .course-block p {
+        font-size: 18px;
+        margin-bottom: 13px;
+        line-height: 1.5;
+    }
+
+    .course-block .info h1 {
+        font-size: 35px;
+    }
+
+    .info .btn {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .course-info p {
+        line-height: 2rem;
+        margin-top: -5px;
+    }
+
+    .circular-arrow {
+        bottom: 8px;
+    }
+
+    .head-block {
+        height: 110vh;
+    }
+
+    .course-block p {
+        font-size: 16px;
+        margin-bottom: 5px;
+        line-height: 1.45;
+    }
+
+    .course-block .info h1 {
+        font-size: 25px;
+    }
+
+    .circular-arrow {
+        bottom: -8vh;
+    }
 }
 
 @media screen and (max-width: 750px) {
     .course-program {
         width: 85%;
+    }
+
+    .course-info p {
+        line-height: 2rem;
+        margin-top: -5px;
+    }
+
+    .circular-arrow {
+        bottom: 8px;
+    }
+
+    .head-block {
+        height: 110vh;
+    }
+
+    .course-block p {
+        font-size: 16px;
+        margin-bottom: 5px;
+        line-height: 1.45;
+    }
+
+    .course-block .info h1 {
+        font-size: 25px;
+    }
+
+    .circular-arrow {
+        bottom: -8vh;
     }
 }
 
@@ -2003,12 +2099,31 @@ form .user-details .input-box {
             width: 70px;
             height: 70px;
         }
+
     .course-info p{
         line-height: 2rem;
         margin-top: -5px;
     }
     .circular-arrow {
         bottom: 8px;
+    }
+
+    .head-block {
+        height: 110vh;
+    }
+
+    .course-block p {
+        font-size: 15px;
+        margin-bottom: 5px;
+        line-height: 1.45;
+    }
+
+    .course-block .info h1{
+        font-size: 25px;
+    }
+
+    .circular-arrow {
+        bottom: -8vh;
     }
 }
 
@@ -2042,6 +2157,23 @@ form .user-details .input-box {
         margin-top: 2rem;
         width: 90%;
         font-size:16px;
+    }
+    .head-block {
+        height: 130vh;
+    }
+
+    .course-block p {
+        font-size: 15px;
+        margin-bottom: 5px;
+        line-height: 1.45;
+    }
+
+    .course-block .info h1{
+        font-size: 25px;
+    }
+
+    .circular-arrow {
+        bottom: -28vh;
     }
 }
 
