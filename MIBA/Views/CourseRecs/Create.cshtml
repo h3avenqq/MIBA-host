@@ -1,0 +1,63 @@
+﻿@model CourseRecsAllCourses
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+        <li>
+            <a asp-controller="Home" asp-action="Index" type="submit">Главная</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Index" type="submit">Все таблицы</a>
+        </li>
+        <li>
+            <a asp-controller="Admin" asp-action="Logout" type="submit">Выйти</a>
+        </li>
+    </ul>
+</div>
+
+<form class="edit-form" method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="row pb-2">
+        <h2 class="text-primary">Создание рекомендации</h2>
+        <hr />
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <select asp-for="Rec.CourseId" name="CourseId" class="form-select lector-select-width">
+                @foreach (Studies course in Model.AllCourses)
+                {
+                    <option value="@course.Id">@course.Title</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="file-button">
+        <span asp-validation-for="Rec.Photo" class="details">Фото</span>
+        <br>
+        <label for="upload-file">Загрузить файл</label>
+        <input asp-for="Rec.Photo" name="Photo" type="file" id="upload-file">
+    </div>
+
+    <div class="user-details">
+        <div class="input-box">
+            <span asp-validation-for="Rec.PhotoUrl" class="details">Или ссылка на фото</span>
+            <input asp-for="Rec.PhotoUrl" name="PhotoUrl" placeholder="example.com/photo1.png">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:200px">Создать</button>
+    <a asp-controller="CourseRecs" asp-action="Index" class="btn btn-secondary" style="width:200px">Вернуться</a>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }

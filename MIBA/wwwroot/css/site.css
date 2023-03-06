@@ -210,7 +210,6 @@ hr {
 
 .main-block {
     padding: 70px 0;
-    transform: translateY(100px);
     opacity: 0;
     transition: 2s all ease;
 }
@@ -220,7 +219,82 @@ hr {
     opacity: 1;
 }
 
-.about{
+.recomendations {
+    background-color: #fff;
+    width: 85%;
+    margin:auto;
+}
+
+.recomendations h1{
+    text-align: center;
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.recomendations li{
+    position: relative;
+    width: 390px;
+    margin: 1.5%;
+    background-color: #b2b2b2;
+    padding: 15px;
+    border-radius: 10px;
+    height: 280px;
+}
+
+.recomendations li a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    height: 100%;
+}
+
+.recomendations li a:hover h2 {
+    color: #fff;
+    background-size: 100% 2px;
+}
+
+.recomendations li h2{
+    width: 75%;
+    font-size: 34px;
+    line-height: 1.35;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff !important;
+    margin: 0 10px;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+.recomendations svg{
+    position: absolute;
+    right: 3%;
+    height: 50px;
+    fill: #fff;
+}
+
+.recomendations li img{
+    object-fit: cover;
+    height: 120px;
+    position: absolute;
+    right: 5%;
+    bottom: 25%;
+}
+
+.recomendations li .date{
+    position:absolute;
+    bottom: 4%;
+    left: 8%;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.about {
     background-color: #fff;
 }
 
@@ -334,12 +408,17 @@ hr {
     z-index: 1;
     line-height: 150px;
     top: 0;
-    width: 100% !important;
+    width: 95% !important;
     text-align: center;
     font-size: 200px;
     font-family: sans-serif;
     font-weight: 700;
     color: #94e4ff;
+}
+
+.mis-num img{
+    object-fit: cover;
+    height: 150px;
 }
 
 .study-branches {

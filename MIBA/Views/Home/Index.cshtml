@@ -1,4 +1,5 @@
-﻿@model CategoriesNewCourseNews
+﻿@using System.Globalization
+@model CategoriesNewCourseNewsRecs
 
 @{
     ViewData["Title"] = "Главная";
@@ -68,6 +69,37 @@
     <a href="#about"><div class="circular-arrow"></div></a>
 </div>
 
+@if (Model.Recs != null)
+{
+    <div class="recomendations main-block">
+        <h1>КУРСЫ ПОВЫШЕНИЯ КВАЛИФИКАЦИИ</h1>
+        <ul class="nav justify-content-center">
+            @foreach(CourseRecomendation course in Model.Recs)
+            {
+                <li>
+                    <a asp-controller="Course" asp-action="Index" asp-route-id="@course.Course.Id">
+                        <svg fill="#000000" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path></g></svg>
+                        <h2>@course.Course.Title</h2>
+                        <img class="for-photo" src="@course.Photo" />
+                        <p class="date">
+                            @(course.Course.StartTime.Month == course.Course.EndTime.Month && course.Course.StartTime.Year == course.Course.EndTime.Year ?
+                                $"{course.Course.StartTime.Day.ToString("d")} - {course.Course.EndTime.ToString("d MMMM yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))} г." :
+                                $"{course.Course.StartTime.ToString("dd/MM/yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))} - {@course.Course.EndTime.ToString("dd/MM/yyyy", CultureInfo.CreateSpecificCulture("ru-RU"))}")
+                        </p>
+                    </a>
+                </li>
+            }
+            <li>
+                <a href="#study">
+                    <svg fill="#000000" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z"></path></g></svg>
+                    <h2>Все курсы</h2>
+                    <img class="for-photo" src="~/media/Recomend/AllCourses.png" />
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+
 <div id="about" class="about main-block">
     <div class="block-about">
         <div class="head-of-block">
@@ -116,7 +148,7 @@
                     <div class="mis-bot">
                         ДЛЯ ДЕТЕЙ И ВЗРОСЛЫХ
                     </div>
-                    <div class="mis-num">01</div>
+                <div class="mis-num"><img src="~/media/Missions/free-icon-font-diploma.png" /></div>
             </li>
             <li>
                 <div class="mis-top">
@@ -128,7 +160,7 @@
                 <div class="mis-bot">
                     ОБРАЗОВАНИЕ
                 </div>
-                <div class="mis-num">02</div>
+                <div class="mis-num"><img src="~/media/Missions/free-icon-font-book-open-reader.png" /></div>
             </li>
             <li>
                 <div class="mis-top">
@@ -140,7 +172,7 @@
                 <div class="mis-bot">
                     ОБУЧАЮЩИХСЯ УНИВЕРСИТЕТА
                 </div>
-                <div class="mis-num">03</div>
+                <div class="mis-num"><img src="~/media/Missions/free-icon-font-graduation-cap.png" /></div>
             </li>
             <li>
                 <div class="mis-top">
@@ -152,10 +184,10 @@
                         И РАЗВИТИЕ
                     </p>
                 </div>
-                <div class="mis-bot">
+                <div class="mis-bot" style="width: 70%">
                     СПОСОБНОСТЕЙ И ТАЛАНТОВ У ДЕТЕЙ И МОЛОДЕЖИ
                 </div>
-                <div class="mis-num">04</div>
+                <div class="mis-num"><img src="~/media/Missions/free-icon-font-gesture.png" /></div>
             </li>
             <li>
                 <div class="mis-top">
@@ -171,7 +203,7 @@
                     ОТРАСЛИ ДЛЯ УДОВЛЕТВОРЕНИЯ<br />
                     НУЖД РЫНКА
                 </div>
-                <div class="mis-num">05</div>
+                <div class="mis-num"><img src="~/media/Missions/free-icon-font-search.png" /></div>
             </li>
             <li>
                     <div class="mis-top">
@@ -188,7 +220,7 @@
                         СОВМЕСТНЫХ ПРОЕКТОВ, В ТОМ ЧИСЛЕ<br />
                         МЕЖДУНАРОДНЫХ
                     </div>
-                    <div class="mis-num">06</div>
+                <div class="mis-num"><img src="~/media/Missions/collaboration.png" /></div>
             </li>
         </ul>
     </div>
