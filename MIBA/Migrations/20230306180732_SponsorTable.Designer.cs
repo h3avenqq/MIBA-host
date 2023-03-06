@@ -4,6 +4,7 @@ using MIBA.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MIBA.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230306180732_SponsorTable")]
+    partial class SponsorTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,27 +37,6 @@ namespace MIBA.Migrations
                     b.HasIndex("StudiesId");
 
                     b.ToTable("LectorsStudies");
-                });
-
-            modelBuilder.Entity("MIBA.Models.CourseRecomendation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.ToTable("CourseRecomendations");
                 });
 
             modelBuilder.Entity("MIBA.Models.Documents", b =>
@@ -406,15 +387,6 @@ namespace MIBA.Migrations
                         .HasForeignKey("StudiesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("MIBA.Models.CourseRecomendation", b =>
-                {
-                    b.HasOne("MIBA.Models.Studies", "Course")
-                        .WithMany()
-                        .HasForeignKey("CourseId");
-
-                    b.Navigation("Course");
                 });
 
             modelBuilder.Entity("MIBA.Models.Feedback", b =>
