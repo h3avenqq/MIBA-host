@@ -11,6 +11,7 @@
     <None Include="Views\News\Index.cshtml" />
     <None Include="Views\RegistrationJudic\Index.cshtml" />
     <None Include="Views\RegistrationPhys\Index.cshtml" />
+    <None Include="Views\Sponsor\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

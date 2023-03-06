@@ -21,13 +21,14 @@ namespace MIBA.Controllers
 
         public IActionResult Index()
         {
-            return View(new CategoriesNewCourseNewsRecs 
-            { 
-                Categories = _db.StudyCategories.Include(x => x.Studies).ToList(), 
-                News = _db.News.ToList(), 
-                NewCourse = new NewCourse(), 
-                Documents = _db.Documents.ToList(), 
-                Recs = _db.CourseRecomendations.Include(x => x.Course).ToList()
+            return View(new CategoriesNewCourseNewsRecs
+            {
+                Categories = _db.StudyCategories.Include(x => x.Studies).ToList(),
+                News = _db.News.ToList(),
+                NewCourse = new NewCourse(),
+                Documents = _db.Documents.ToList(),
+                Recs = _db.CourseRecomendations.Include(x => x.Course).ToList(),
+                Sponsors = _db.Sponsors.ToList()
             });
         }
 

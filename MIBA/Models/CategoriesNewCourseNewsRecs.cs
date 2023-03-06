@@ -7,5 +7,6 @@
         public NewCourse NewCourse { get; set; }
         public IEnumerable<Documents> Documents { get; set; }
         public IEnumerable<CourseRecomendation> Recs { get; set; }
+        public IEnumerable<Sponsor> Sponsors { get; set; }
     }
 }

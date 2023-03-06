@@ -401,21 +401,11 @@
         <h1>НАШИ ПАРТНЕРЫ</h1>
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             @{
-
-                DirectoryInfo Folder;
-                FileInfo[] Images;
-
-                Folder = new DirectoryInfo("wwwroot/media/Investors");
-                Images = Folder.GetFiles();
-
-                for (int k = 0; k < Images.Length; k++)
+                foreach (var sponsor in Model.Sponsors)
                 {
                     @Html.Raw("<li>")
-                    ;
-                    string image = String.Format(@"{0}/{1}", "/media/Investors", Images[k].Name);
-                    @Html.Raw("<img src='" + image + "' alt='' />")
+                    @Html.Raw("<img src='" + sponsor.Url + "' alt='' />")
                     @Html.Raw("</li>")
-                    ;
                 }
             }
         </ul>
