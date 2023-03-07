@@ -14,7 +14,7 @@
 </head>
 <body id="temp">
     <partial name="_Notifications" />
-    <header>
+    <header class= "top-nav">
         <a asp-controller="Home" action="Index" class="left">
             <div class="miba-full-logo">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -283,13 +283,11 @@
                 </svg>
             </div>
         </a>
-        @*<input type="checkbox" name="" id="">
-        <div class="hamburger-lines nav right">
-            <span class="line line1"></span>
-            <span class="line line2"></span>
-            <span class="line line3"></span>
-        </div>*@
-        <ul class="nav right menu-items">
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+        <ul class="menu-items">
             <li><a href="~/Home/Index/#about">ОБ АКАДЕМИИ</a></li>
             <li><a href="~/Home/Index/#study">КУРСЫ</a></li>
             <li><a href="~/Home/Index/#partners">ПАРТНЕРЫ</a></li>
