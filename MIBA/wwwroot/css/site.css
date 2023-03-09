@@ -2390,6 +2390,18 @@ form .user-details .input-box {
 
 /* ............/navbar/............ */
 
+.menu-wrap-box {
+    width: 46px;
+    height: 42px;
+    border-radius: 7px;
+    background-color: #222;
+    position: fixed;
+    top: 15px;
+    right: 9px;
+    z-index: 100;
+    display: none;
+}
+
 .top-nav {
     position: fixed;
     display: flex;
@@ -2399,6 +2411,7 @@ form .user-details .input-box {
     height: 70px;
     padding: 1em;
     width: 100%;
+    z-index: 120;
 }
 
 .menu-items {
@@ -2466,6 +2479,14 @@ form .user-details .input-box {
 }
 
 @media (max-width: 1200px) {
+
+    .menu-wrap-box {
+        display: block;
+    }
+    header {
+        mix-blend-mode: normal !important;
+    }
+
     .menu-button-container {
         display: flex;
     }

@@ -18,13 +18,18 @@
     <div class="header-left">
         <img src="~/media/logo.png"/>
     </div>
-    <header id="header">
-        <div class="nav right">
-            <a href="#about">ОБ АКАДЕМИИ</a>
-            <a href="#study">КУРСЫ</a>
-            <a href="#partners">ПАРТНЕРЫ</a>
-            <a href="#footer">КОНТАКТЫ</a>
-        </div>
+    <header class= "top-nav">
+        <div></div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+                <div class="menu-button"></div>
+            </label>
+        <ul class="menu-items">
+            <li><a href="#about">ОБ АКАДЕМИИ</a></li>
+            <li><a href="#study">КУРСЫ</a></li>
+            <li><a href="#partners">ПАРТНЕРЫ</a></li>
+            <li><a href="#footer">КОНТАКТЫ</a></li>
+        </ul>
     </header>
     <main role="main" id="main">
         @RenderBody()
