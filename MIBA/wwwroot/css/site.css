@@ -294,9 +294,9 @@ hr {
 }
 
 .about .head-of-block{
-    padding-left: 5%;
     width: 85%;
     margin-bottom: 5%;
+    margin: auto;
 }
 
 .block-about {
@@ -359,10 +359,9 @@ hr {
 }
 
 .missions {
-    margin-left: 2%;
-    margin-bottom: 0;
     padding-left: 0;
-    margin-right: auto;
+    margin: auto;
+    margin-left: 6%;
     width: 100%;
     max-width: 1200px;
 }
@@ -507,7 +506,8 @@ hr {
 }
 
 .process li{
-    width: 360px;
+    display: flex;
+    width: 450px;
     margin: 20px 30px;
     position: relative;
 }
@@ -528,12 +528,14 @@ hr {
     z-index: 1;
     width: 100%;
     border: 1px solid #e0e0e0;
-    padding: 30px;
-    padding-top: 50px;
+    padding: 60px 30px;
     font-size: 15px;
-    height: 310px;
-    line-height: 1.75;
+    line-height: 2;
     font-weight: 700;
+}
+
+.for-text div{
+    margin: auto;
 }
 
 .for-text notstrong{
@@ -542,7 +544,8 @@ hr {
 }
 
 .for-text h2{
-    padding-top: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     font-size: 22px;
     font-weight: 600;
     text-align: center;
@@ -574,6 +577,11 @@ hr {
 .create-block .first-image .img-block {
     width: 600px;
     height: 600px;
+    object-fit: cover;
+}
+
+.create-block .fourth-image .img-block {
+    width: 600px;
     object-fit: cover;
 }
 
@@ -1565,6 +1573,16 @@ form .user-details .input-box {
     width: 200px;
 }
 
+@media screen and (max-width: 1500px) {
+    .process li {
+        width: 420px;
+    }
+
+    .process .for-text {
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-width: 1300px) {
     .block-about {
         width: 80%;
@@ -1576,7 +1594,7 @@ form .user-details .input-box {
     }
 
     .process li {
-        width: 320px;
+        width: 370px;
     }
 
     .process .for-text{
@@ -1597,20 +1615,11 @@ form .user-details .input-box {
             font-size: 16px;
         }
 
-        .process li{
-            margin-bottom: 3rem;
-            width: 80%;
-        }
-
-        .process .for-num {
-            left: 45%;
-        }
-
-        .process .for-text {
-            font-size: 16px;
-        }
-
         @media screen and (max-width: 800px) {
+            .create-block .img-block {
+                padding: 0;
+            }
+
             .partners-block li {
                 width: 120px;
                 height: 100px;
@@ -1646,6 +1655,20 @@ form .user-details .input-box {
                 padding: 5rem 0;
                 margin: auto;
                 width: 70%;
+            }
+
+
+            .process li {
+                margin-bottom: 3rem;
+                width: 80%;
+            }
+
+            .process .for-num {
+                left: 45%;
+            }
+
+            .process .for-text {
+                font-size: 14px;
             }
 
             @media screen and (max-width: 750px) {
@@ -1721,14 +1744,23 @@ form .user-details .input-box {
                     }
 
                     .missions li{
-                        width: 60%;
+                        width: 80%;
                     }
 
                     .map{
                         width: 90%;
                     }
 
+                    .process .for-text {
+                        font-size: 14px;
+                    }
+
                     @media screen and (max-width: 500px) {
+                        .missions li {
+                            margin-left: 0;
+                            width: 100%;
+                        }
+
                         .how-works .arrow svg {
                             margin-top: 200%;
                             width: 25px;
@@ -1763,16 +1795,22 @@ form .user-details .input-box {
                             font-size: 20px;
                         }
                         @media screen and (max-width: 420px){
-                            .info{
+                            .missions .mis-num img {
+                                float: right;
+                                margin-right: 5%;
+                            }
+
+                            .missions li{
+                                padding-left: 0;
+                            }
+
+                            .info {
                                 width: 300px;
                             }
                             .info h1 {
                                 font-size: 30px;
                             }
 
-                            .process .for-text{
-                                height: 300px;
-                            }
                             .how-works .arrow svg {
                                 margin-top: 200%;
                                 width: 25px;
@@ -1788,14 +1826,24 @@ form .user-details .input-box {
                                 left: 40%;
                             }
 
-                            .how-works ul li p{
-                                font-size: 12px;
+                            .process li{
+                                height: 250px;
                             }
 
-                            @media screen and (max-width: 350px) {
-                                .process .for-text {
-                                    height: 400px;
-                                }
+                            .process .for-text{
+                                font-size: 10px !important;
+                            }
+
+                            .process .for-text notstrong {
+                                font-size: 8px !important;
+                            }
+
+                            .process .for-text h2{
+                                font-size: 14px;
+                            }
+
+                            .how-works ul li p{
+                                font-size: 12px;
                             }
                         }
                     }
@@ -1914,7 +1962,7 @@ form .user-details .input-box {
 }
 
 .btn-color {
-    background-color: #1c7b9b !important;
+    background-color: #2d7ec4 !important;
 }
 
 .cursor-pointer{
@@ -1939,7 +1987,7 @@ form .user-details .input-box {
         background: black;
         width: max-content;
     }
-    .left {
+    header .left {
         margin-left: 25px !important;
     }
     .miba-full-logo svg {
@@ -1989,7 +2037,7 @@ form .user-details .input-box {
 }
 
 @media screen and (max-width: 1000px) {
-    .left {
+    header .left {
         margin-left: 15px !important;
     }
 
@@ -2087,7 +2135,7 @@ form .user-details .input-box {
 }
 
 @media screen and (max-width: 650px) {
-    .left {
+    header .left {
         margin-left: 0px !important;
     }
 
@@ -2132,7 +2180,7 @@ form .user-details .input-box {
 }
 
 @media screen and (max-width: 500px) {
-    .left {
+    header .left {
         margin-left: 0px !important;
     }
 
@@ -2182,7 +2230,7 @@ form .user-details .input-box {
 }
 
 @media screen and (max-width: 410px) {
-    .left {
+    header .left {
         margin-left: 0px !important;
     }
 

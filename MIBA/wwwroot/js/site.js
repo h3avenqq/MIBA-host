@@ -229,22 +229,24 @@ window.onload = function () {
     arr.forEach(item => {
         item.style.width = (width / 1920 * 400).toString() + "px";
         item.style.height = (width / 1920 * 400).toString() + "px";
-        item.style.padding = (1 - width / 1920 * 1).toString() + "rem";
     });
     document.querySelector(".first-image .img-block").style.width = (width / 1920 * 800).toString() + "px";
     document.querySelector(".first-image .img-block").style.height = (width / 1920 * 800).toString() + "px";
+    document.querySelector(".fourth-image .img-block").style.width = (width / 1920 * 800).toString() + "px";
+    document.querySelector(".fourth-image .img-block").style.height = (width / 1920 * 400).toString() + "px";
 }
 
 window.addEventListener("resize", function () {
     var width = window.innerWidth;
     var arr = document.querySelectorAll(".img-block");
     arr.forEach(item => {
-        item.style.width = (width / 1920 * 300).toString() + "px";
-        item.style.height = (width / 1920 * 300).toString() + "px";
-        item.style.padding = (width / 1920 * 1).toString() + "rem";
+        item.style.width = (width / 1920 * 400).toString() + "px";
+        item.style.height = (width / 1920 * 400).toString() + "px";
     });
-    document.querySelector(".first-image .img-block").style.width = (width / 1920 * 600).toString() + "px";
-    document.querySelector(".first-image .img-block").style.height = (width / 1920 * 600).toString() + "px";
+    document.querySelector(".first-image .img-block").style.width = (width / 1920 * 800).toString() + "px";
+    document.querySelector(".first-image .img-block").style.height = (width / 1920 * 800).toString() + "px";
+    document.querySelector(".fourth-image .img-block").style.width = (width / 1920 * 800).toString() + "px";
+    document.querySelector(".fourth-image .img-block").style.height = (width / 1920 * 400).toString() + "px";
 });
 
 document.addEventListener('DOMContentLoaded', function () {
