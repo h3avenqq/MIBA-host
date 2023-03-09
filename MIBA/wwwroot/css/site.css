@@ -2,6 +2,11 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+.main-block h1 {
+    font-size: 40px !important;
+    font-weight: 600 !important;
+}
+
 html::-webkit-scrollbar {
     display: none;
 }
@@ -231,15 +236,16 @@ hr {
 
 .recomendations li{
     position: relative;
-    width: 390px;
+    width: 30%;
+    min-width: 365px;
     margin: 1.5%;
     background-color: #b2b2b2;
-    padding: 15px;
     border-radius: 10px;
-    height: 280px;
+    height: 300px;
 }
 
 .recomendations li a{
+    padding: 15px;
     text-decoration: none;
     color: #fff;
     display: block;
@@ -252,18 +258,19 @@ hr {
 }
 
 .recomendations li h2{
-    width: 75%;
-    font-size: 34px;
+    font-size: 28px;
     line-height: 1.35;
     font-weight: 500;
     text-decoration: none;
     color: #fff !important;
-    margin: 0 10px;
+    margin: 0 130px 0 10px;
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0% 2px;
     transition: background-size .3s;
+    position: relative;
+    z-index: 10;
 }
 
 .recomendations svg{
@@ -271,6 +278,7 @@ hr {
     right: 3%;
     height: 50px;
     fill: #fff;
+    z-index: 9;
 }
 
 .recomendations li img{
@@ -279,6 +287,7 @@ hr {
     position: absolute;
     right: 5%;
     bottom: 25%;
+    z-index: 8;
 }
 
 .recomendations li .date{
@@ -306,6 +315,8 @@ hr {
 }
 
 .about h1{
+    padding-top:30px;
+    padding-bottom:12px;
     font-size: 36px;
     line-height: 52px;
     font-weight: 600;
@@ -318,7 +329,7 @@ hr {
 }
 
 .about h2{
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .about .target-ul li {
@@ -500,7 +511,7 @@ hr {
     font-size: 34px;
     font-weight: 600;
     margin-bottom: 5rem;
-    width: 80%;
+    text-align: center;
     display: block;
     margin-left: auto;
 }
@@ -663,9 +674,9 @@ hr {
 .how-works ul li h1{
     text-align: center;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 24px !important;
     line-height: 1.35;
-    font-weight: 600;
+    font-weight: 600 !important;
 }
 
 .how-works ul li p{
@@ -943,7 +954,7 @@ footer .for-site-svg{
 }
 
 .course-block h1{
-    font-size: 66px;
+    font-size: 48px;
 }
 
 .course-block .info{
@@ -1086,7 +1097,7 @@ footer .for-site-svg{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1500px;
     padding: 0;
 }
 
@@ -1977,6 +1988,71 @@ form .user-details .input-box {
 
 /*fix for other monitors*/
 
+@media screen and (max-width: 1650px) {
+    .recomendations {
+        width: 92%;
+    }
+    .recomendations li h2{
+        font-size: 27px;
+    }
+
+}
+
+@media screen and (max-width: 1500px){
+
+    .course-block p {
+        font-size: 20px;
+        margin-bottom: 13px;
+        line-height: 1.5;
+    }
+
+    .course-block .info h1 {
+        font-size: 40px;
+    }
+
+    .info .btn {
+        margin-top: 1rem;
+    }
+
+    .recomendations {
+        width: 92%;
+    }
+
+    .recomendations li {
+        width: 30%;
+        height: 300px;
+    }
+
+    .recomendations li h2{
+        font-size: 26px;
+    }
+
+    .recomendations li img{
+        height: 105px;
+        right: 5%;
+        bottom: 23%;
+    }
+
+    .recomendations li p{
+        font-size: 20px !important;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .recomendations {
+        width: 95%;
+    }
+
+    .recomendations li {
+        width: 30%;
+        height: 310px;
+    }
+
+    .recomendations li h2{
+        font-size: 24px;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .course-block .info{
         width: 90% !important;
@@ -2013,22 +2089,6 @@ form .user-details .input-box {
 
     .course-block .info h1 {
         font-size: 38px;
-    }
-
-    .info .btn {
-        margin-top: 1rem;
-    }
-}
-
-@media screen and (max-width: 1500px) {
-    .course-block p {
-        font-size: 20px;
-        margin-bottom: 13px;
-        line-height: 1.5;
-    }
-
-    .course-block .info h1 {
-        font-size: 40px;
     }
 
     .info .btn {
@@ -2098,6 +2158,15 @@ form .user-details .input-box {
 
     .circular-arrow {
         bottom: -8vh;
+    }
+
+    .recomendations li {
+        width: 85%;
+        height: 280px;
+    }
+
+    .recomendations li h2{
+        font-size: 30px;
     }
 }
 
@@ -2177,6 +2246,19 @@ form .user-details .input-box {
     .circular-arrow {
         bottom: -8vh;
     }
+
+    .recomendations {
+        width: 90%;
+    }
+
+    .recomendations li {
+        width: 99%;
+        min-width: 99%;
+    }
+
+    .recomendations li h2 {
+        font-size: 26px;
+    }    
 }
 
 @media screen and (max-width: 500px) {
@@ -2227,6 +2309,32 @@ form .user-details .input-box {
     .circular-arrow {
         bottom: -28vh;
     }
+
+    .registration-container .registration {
+        width: 95%;
+    }
+
+    .recomendations li h2 {
+        font-size: 23px;
+    } 
+
+    .recomendations li p {
+        font-size: 17px !important;
+    }
+
+    .recomendations {
+        width: 92%;
+    }
+
+    .recomendations li {
+        width: 100%;
+        height: 300px;
+        min-width: 100%;
+    }
+
+    .recomendations li img{
+        height: 90px;
+    }
 }
 
 @media screen and (max-width: 410px) {
@@ -2247,9 +2355,36 @@ form .user-details .input-box {
             height: 50px;
         }
 
+    .course-block {
+        margin-left: 8%;
+    }
+
     .course-program {
         width: 93%;
     }
+
+    .recomendations {
+        width: 95%;
+    }
+
+    .recomendations li {
+        width: 100%;
+        height: 300px;
+        min-width: 100%;
+    }
+
+    .recomendations li h2{
+        font-size: 20px !important;
+    }
+
+    .recomendations li p{
+        font-size: 17px !important;
+    }
+
+    .recomendations li img{
+        height: 85px;
+    }
+
 }
 
 
