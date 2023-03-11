@@ -66,12 +66,20 @@
         <a href="#study" class="btn btn-primary btn-color">ВСЕ КУРСЫ</a>
 
     </div>
-    <a href="#about"><div class="circular-arrow"></div></a>
+    @if (Model.Recs != null)
+    {
+        <a href="#recomendations_id"><div class="circular-arrow"></div></a>
+    }
+    else
+    {
+        <a href="#about"><div class="circular-arrow"></div></a>
+    }
+
 </div>
 
 @if (Model.Recs != null)
 {
-    <div class="recomendations main-block">
+    <div id="recomendations_id" class="recomendations main-block">
         <h1>КУРСЫ ПОВЫШЕНИЯ КВАЛИФИКАЦИИ</h1>
         <ul class="nav justify-content-center">
             @foreach(CourseRecomendation course in Model.Recs)
@@ -330,9 +338,22 @@
 <div class="create-block main-block">
     <h1>САМОЕ ВРЕМЯ СОЗДАВАТЬ</h1>
     <p>Выберите готовую программу обучения, чтобы развивать свою карьеру</p>
-    <table align="center">
+    <table align="center" class="create-table-photo">
         <tr>
             <td class="first-image" rowspan="2" colspan="2"><img class="img-block" src="~/media/first.png" alt=""></td>
+            <td><img class="img-block" src="~/media/second.png" alt=""></td>
+            <td><img class="img-block" src="~/media/third.png" alt=""></td>
+        </tr>
+        <tr>
+            <td class="fourth-image" colspan="2"><img class="img-block" src="~/media/fourth.png" alt=""></td>
+        </tr>
+    </table>
+
+    <table align="center" class="create-table-photo-2">
+        <tr>
+            <td class="first-image" colspan="2"><img class="img-block" src="~/media/first.png" alt=""></td>
+        </tr>
+        <tr>
             <td><img class="img-block" src="~/media/second.png" alt=""></td>
             <td><img class="img-block" src="~/media/third.png" alt=""></td>
         </tr>

@@ -7,6 +7,10 @@ body{
     font-weight: 600 !important;
 }
 
+.study-branches h1, .process h1, .create-block h1{
+    padding: 0 10px;
+}
+
 html::-webkit-scrollbar {
     display: none;
 }
@@ -29,6 +33,10 @@ header {
     position: fixed;
     width: 100%;
     z-index: 21;
+}
+
+header .miba-full-logo {
+    margin-top: 15px;
 }
 
 .hidden{
@@ -62,13 +70,13 @@ header .left {
     margin-top: 5px;
     position:absolute;
     font-family: 'TildaSans',Arial,sans-serif;
-    margin-left: 30px;
+    /*margin-left: 30px;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 400;*/
 }
 
 .header-left img{
-    width: 400px;
+    width: 300px;
     pointer-events: none;
 }
 
@@ -149,9 +157,11 @@ hr {
     font-size: 62px;
     line-height: 1.23;
     font-weight: 600;
+    padding-right:10px;
 }
 .info p{
     font-size: 24px;
+    padding-right: 10px;
     color: #afafaf;
 }
 
@@ -432,8 +442,6 @@ hr {
 }
 
 .study-branches h1{
-    font-size: 30px;
-    font-weight: bold;
     line-height: 1.23;
     text-align: center;
 }
@@ -570,7 +578,8 @@ hr {
     text-align: center;
 }
 
-.create-block p{
+.create-block p {
+    padding: 0 20px;
     text-align: center;
     font-size: 24px;
     line-height: 28px;
@@ -578,11 +587,19 @@ hr {
     font-weight: 300;
 }
 
+.create-table-photo td{
+    padding: 0;
+}
+
+.create-table-photo-2{
+    display: none;
+}
+
 .create-block .img-block {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    padding: 1rem;
+    padding: 10px;
 }
 
 .create-block .first-image .img-block {
@@ -709,6 +726,8 @@ hr {
 .partners-block img{
     max-height: 150px;
     max-width: 200px;
+    margin-left: auto;
+    margin-right: auto
 }
 
 footer{
@@ -1585,12 +1604,22 @@ form .user-details .input-box {
 }
 
 @media screen and (max-width: 1500px) {
+
+    .top .info h1 {
+        font-size: 55px;
+    }
+
     .process li {
         width: 420px;
     }
 
     .process .for-text {
         font-size: 14px;
+    }
+
+    .header-left img {
+        width: 230px;
+        pointer-events: none;
     }
 }
 
@@ -1612,8 +1641,41 @@ form .user-details .input-box {
         font-size: 12px;
     }
 
+    @media screen and (max-width: 1220px) {
+        .create-block .img-block {
+            width: 230px;
+            height: 230px;
+            object-fit: cover;
+            padding: 10px;
+        }
+
+        .create-block .first-image .img-block {
+            width: 460px;
+            height: 460px;
+            object-fit: cover;
+        }
+
+        .create-block .fourth-image .img-block {
+            width: 460px;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .main-block h1 {
+            font-size: 36px !important;
+            font-weight: 600 !important;
+        }
+        .top .info h1{
+            font-size: 48px;
+        }
+    }
+
     @media screen and (max-width: 1100px) {
         .block-about {
+            width: 90%;
+        }
+        .block-about .missions{
             width: 90%;
         }
 
@@ -1626,11 +1688,42 @@ form .user-details .input-box {
             font-size: 16px;
         }
 
-        @media screen and (max-width: 800px) {
-            .create-block .img-block {
-                padding: 0;
+        @media screen and (max-width: 960px){
+            .about .target-ul ul.nav li p {
+                font-size: 18px;
+            }
+            .top .info h1 {
+                font-size: 45px;
+            }
+            .create-table-photo-2{
+                display: table;
             }
 
+            .create-table-photo{
+                display: none;
+            }
+
+            .create-block .img-block {
+                width: 250px;
+                height: 250px;
+                object-fit: cover;
+                padding: 5px;
+            }
+
+            .create-block .first-image .img-block {
+                width: 500px;
+                height: 500px;
+                object-fit: cover;
+            }
+
+            .create-block .fourth-image .img-block {
+                width: 500px;
+                height: 250px;
+                object-fit: cover;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
             .partners-block li {
                 width: 120px;
                 height: 100px;
@@ -1696,6 +1789,51 @@ form .user-details .input-box {
                 }
 
                 @media screen and (max-width: 600px) {
+                    /*beg*/
+                    .accordion-item a {
+                        font-size: 18px !important;
+                    }
+
+                    .top .info h1 {
+                        font-size: 40px !important;
+                    }
+
+                    .info p {
+                        font-size: 22px;
+                    }
+
+                    .main-block h1 {
+                        font-size: 26px !important;
+                        font-weight: 700 !important;
+                        line-height: unset;
+                    }
+
+                    .header-left {
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        margin-left: 0;
+                    }
+                    /*end*/
+                    .create-block .img-block {
+                        width: 200px;
+                        height: 200px;
+                        object-fit: cover;
+                        padding: 5px;
+                    }
+
+                    .create-block .first-image .img-block {
+                        width: 400px;
+                        height: 400px;
+                        object-fit: cover;
+                    }
+
+                    .create-block .fourth-image .img-block {
+                        width: 400px;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+
                     .header-left img{
                         width: 250px !important;
                     }
@@ -1715,10 +1853,12 @@ form .user-details .input-box {
 
                     .not-found h1 {
                         font-size: 20px;
+                        padding: 0 15px;
                     }
 
                     .not-found p {
                         font-size: 16px;
+                        padding: 0 10px;
                     }
 
                     .main-block h1 {
@@ -1767,6 +1907,76 @@ form .user-details .input-box {
                     }
 
                     @media screen and (max-width: 500px) {
+                        .recomendations h1 {
+                            margin-top: 2rem;
+                            margin-bottom: 3rem;
+                        }
+                        .partners-block {
+                            padding: 70px 20px;
+                        }
+
+                        .top .info {
+                            width: 90% !important;
+                            margin-left: auto !important;
+                            margin-right: auto !important;
+                        }
+                        .top .info p {
+                            padding-right: 0;
+                        }
+                        .top .info .btn {
+                            width: 100%;
+                        }
+                        .about .target-ul ul.nav li p {
+                            font-size: 12px !important;
+                        }
+                        .create-block .img-block {
+                            width: 150px;
+                            height: 150px;
+                            object-fit: cover;
+                            padding: 5px;
+                        }
+
+                        .create-block .first-image .img-block {
+                            width: 300px;
+                            height: 300px;
+                            object-fit: cover;
+                        }
+
+                        .create-block .fourth-image .img-block {
+                            width: 300px;
+                            height: 150px;
+                            object-fit: cover;
+                        }
+                        /*beg*/
+                        .accordion-button {
+                            font-size: 18px !important;
+                        }
+
+                        .accordion-item a {
+                            font-size: 16px !important;
+                        }
+
+                        .top .info h1 {
+                            font-size: 35px !important;
+                        }
+
+                        .info p {
+                            font-size: 20px;
+                        }
+
+                        .main-block h1 {
+                            font-size: 24px !important;
+                            font-weight: 700 !important;
+                            line-height: unset;
+                        }
+
+                        .header-left {
+                            top: 0;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                            margin-left: 0;
+                        }
+                        /*end*/
                         .missions li {
                             margin-left: 0;
                             width: 100%;
@@ -1785,11 +1995,6 @@ form .user-details .input-box {
                             font-size: 14px !important;
                         }
 
-                        .info {
-                            width: 400px !important;
-                            margin-left: 10px;
-                        }
-
                         .info h1 {
                             font-size: 40px;
                         }
@@ -1802,10 +2007,59 @@ form .user-details .input-box {
                             font-size: 25px;
                         }
 
-                        .create-block p {
-                            font-size: 20px;
+                        .missions li {
+                            padding-left: 10%;
                         }
+
                         @media screen and (max-width: 420px){
+                            .accordion-button {
+                                font-size: 18px !important;
+                            }
+
+                            .accordion-item a{
+                                font-size: 16px !important;
+                            }
+
+                            .top .info h1 {
+                                font-size: calc(1.375rem + 1.5vw) !important;
+                            }
+
+                            .info p {
+                                font-size: 18px;
+                            }
+
+                            .main-block h1 {
+                                font-size: 22px !important;
+                                font-weight: 700 !important;
+                                line-height: unset;
+                            }
+
+                            .header-left {
+                                top: 0;
+                                left: 50%;
+                                transform: translate(-50%, 0);
+                                margin-left: 0;
+                            }
+
+                            .create-block .img-block {
+                                width: 175px;
+                                height: 175px;
+                                object-fit: cover;
+                                padding: 5px;
+                            }
+
+                            .create-block .first-image .img-block {
+                                width: 350px;
+                                height: 350px;
+                                object-fit: cover;
+                            }
+
+                            .create-block .fourth-image .img-block {
+                                width: 350px;
+                                height: 175px;
+                                object-fit: cover;
+                            }
+
                             .missions .mis-num img {
                                 float: right;
                                 margin-right: 5%;
@@ -1813,13 +2067,6 @@ form .user-details .input-box {
 
                             .missions li{
                                 padding-left: 0;
-                            }
-
-                            .info {
-                                width: 300px;
-                            }
-                            .info h1 {
-                                font-size: 30px;
                             }
 
                             .how-works .arrow svg {
@@ -1830,7 +2077,7 @@ form .user-details .input-box {
                                 width: 40px;
                             }
                             .about .target-ul ul.nav li p {
-                                font-size: 12px !important;
+                                font-size: 11px !important;
                             }
 
                             .process .for-num {
@@ -1855,6 +2102,36 @@ form .user-details .input-box {
 
                             .how-works ul li p{
                                 font-size: 12px;
+                            }
+
+                            @media screen and (max-width: 360px) {
+
+                                .create-table-photo-2 {
+                                    display: table;
+                                }
+
+                                .create-table-photo {
+                                    display: none;
+                                }
+
+                                .create-block .img-block {
+                                    width: 150px;
+                                    height: 150px;
+                                    object-fit: cover;
+                                    padding: 5px;
+                                }
+
+                                .create-block .first-image .img-block {
+                                    width: 300px;
+                                    height: 300px;
+                                    object-fit: cover;
+                                }
+
+                                .create-block .fourth-image .img-block {
+                                    width: 300px;
+                                    height: 150px;
+                                    object-fit: cover;
+                                }
                             }
                         }
                     }
@@ -2053,6 +2330,30 @@ form .user-details .input-box {
     }
 }
 
+@media screen and (max-width: 1370px) {
+    header .left {
+        margin-left: 15px !important;
+    }
+
+    .miba-full-logo {
+        display: none;
+    }
+
+    .miba-short-logo {
+        display: block !important;
+    }
+
+    header .left {
+        margin-left: 15px !important;
+    }
+
+    .miba-short-logo svg {
+        margin-top: 15px;
+        width: 90px;
+        height: 90px;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .course-block .info{
         width: 90% !important;
@@ -2097,22 +2398,6 @@ form .user-details .input-box {
 }
 
 @media screen and (max-width: 1000px) {
-    header .left {
-        margin-left: 15px !important;
-    }
-
-    .miba-full-logo {
-        display: none;
-    }
-
-    .miba-short-logo {
-        display: block !important;
-    }
-
-        .miba-short-logo svg {
-            width: 90px;
-            height: 90px;
-        }
     .course-program{
         width: 77%;
     }
@@ -2138,10 +2423,6 @@ form .user-details .input-box {
         margin-top: -5px;
     }
 
-    .circular-arrow {
-        bottom: 8px;
-    }
-
     .head-block {
         height: 110vh;
     }
@@ -2156,7 +2437,7 @@ form .user-details .input-box {
         font-size: 25px;
     }
 
-    .circular-arrow {
+    .head-block .circular-arrow {
         bottom: -8vh;
     }
 
@@ -2180,10 +2461,6 @@ form .user-details .input-box {
         margin-top: -5px;
     }
 
-    .circular-arrow {
-        bottom: 8px;
-    }
-
     .head-block {
         height: 110vh;
     }
@@ -2198,7 +2475,7 @@ form .user-details .input-box {
         font-size: 25px;
     }
 
-    .circular-arrow {
+    .head-block .circular-arrow {
         bottom: -8vh;
     }
 }
@@ -2225,9 +2502,6 @@ form .user-details .input-box {
         line-height: 2rem;
         margin-top: -5px;
     }
-    .circular-arrow {
-        bottom: 8px;
-    }
 
     .head-block {
         height: 110vh;
@@ -2243,7 +2517,7 @@ form .user-details .input-box {
         font-size: 25px;
     }
 
-    .circular-arrow {
+    .head-block .circular-arrow {
         bottom: -8vh;
     }
 
@@ -2286,11 +2560,14 @@ form .user-details .input-box {
     .course-block p{
         font-size: 19px;
     }
+    .course-program ul{
+        padding-left: 0;
+    }
 
-    .info .btn{
+    .info .btn {
         margin-top: 2rem;
         width: 90%;
-        font-size:16px;
+        font-size: 16px;
     }
     .head-block {
         height: 130vh;
@@ -2306,7 +2583,7 @@ form .user-details .input-box {
         font-size: 25px;
     }
 
-    .circular-arrow {
+    .head-block .circular-arrow {
         bottom: -28vh;
     }
 
@@ -2478,8 +2755,16 @@ form .user-details .input-box {
     transform: rotate(-405deg);
 }
 
+.main-page-li{
+    display: none;
+}
 @media (max-width: 1200px) {
-
+    .miba-full-logo, .miba-short-logo {
+        display: none !important;
+    }
+    .main-page-li {
+        display: flex;
+    }
     .menu-wrap-box {
         display: block;
     }
@@ -2488,6 +2773,7 @@ form .user-details .input-box {
     }
 
     .menu-button-container {
+        mix-blend-mode: difference !important;
         display: flex;
     }
 

@@ -224,7 +224,7 @@ window.onload = function () {
         });
     });
 
-    var width = window.innerWidth;
+    /*var width = window.innerWidth;
     var arr = document.querySelectorAll(".img-block");
     arr.forEach(item => {
         item.style.width = (width / 1920 * 400).toString() + "px";
@@ -233,10 +233,10 @@ window.onload = function () {
     document.querySelector(".first-image .img-block").style.width = (width / 1920 * 800).toString() + "px";
     document.querySelector(".first-image .img-block").style.height = (width / 1920 * 800).toString() + "px";
     document.querySelector(".fourth-image .img-block").style.width = (width / 1920 * 800).toString() + "px";
-    document.querySelector(".fourth-image .img-block").style.height = (width / 1920 * 400).toString() + "px";
+    document.querySelector(".fourth-image .img-block").style.height = (width / 1920 * 400).toString() + "px";*/
 }
 
-window.addEventListener("resize", function () {
+/*window.addEventListener("resize", function () {
     var width = window.innerWidth;
     var arr = document.querySelectorAll(".img-block");
     arr.forEach(item => {
@@ -247,7 +247,7 @@ window.addEventListener("resize", function () {
     document.querySelector(".first-image .img-block").style.height = (width / 1920 * 800).toString() + "px";
     document.querySelector(".fourth-image .img-block").style.width = (width / 1920 * 800).toString() + "px";
     document.querySelector(".fourth-image .img-block").style.height = (width / 1920 * 400).toString() + "px";
-});
+});*/
 
 document.addEventListener('DOMContentLoaded', function () {
     const modalController = ({ modal, btnOpen, btnClose, time = 300 }) => {
