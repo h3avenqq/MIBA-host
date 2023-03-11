@@ -1669,6 +1669,12 @@ form .user-details .input-box {
         .top .info h1{
             font-size: 48px;
         }
+        .feedback, .documents {
+            width: 90%;
+        }
+        .feedback h1, .documents h1{
+            padding: 0 10px;
+        }
     }
 
     @media screen and (max-width: 1100px) {
