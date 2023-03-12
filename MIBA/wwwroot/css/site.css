@@ -1795,6 +1795,19 @@ form .user-details .input-box {
                 }
 
                 @media screen and (max-width: 600px) {
+                    .top {
+                        /*background-color: rgba(61, 61, 61, 0.658);*/
+                        background-blend-mode: multiply;
+                        background-image: url('/media/top-crop.jpg');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        width: 100%;
+                        height: 100vh;
+                        display: flex;
+                        padding: 70px 0;
+                        align-items: center;
+                    }
                     /*beg*/
                     .accordion-item a {
                         font-size: 18px !important;
