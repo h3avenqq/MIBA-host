@@ -252,6 +252,20 @@ hr {
     background-color: #b2b2b2;
     border-radius: 10px;
     height: 300px;
+    transition: all 0.8s ease;
+}
+
+.recomendations li:hover{
+    box-shadow:
+    1px 1px #83a6ec,
+    2px 2px #83a6ec,
+    3px 3px #83a6ec,
+    4px 4px #83a6ec,
+    5px 5px #83a6ec,
+    6px 6px #83a6ec,
+    7px 7px #83a6ec;
+  -webkit-transform: translateX(-7px);
+  transform: translateX(-7px);
 }
 
 .recomendations li a{
@@ -978,6 +992,7 @@ footer .for-site-svg{
 
 .course-block .info{
     width: 100%;
+    max-width: 710px;
 }
 
 .course-block .info a{
