@@ -396,21 +396,26 @@ hr {
 .missions {
     padding-left: 0;
     margin: auto;
-    margin-left: 6%;
-    width: 100%;
-    max-width: 1200px;
+    width: 85%;
 }
 
 .missions li{
-    width: 50%;
+    width: 45%;
     display: inline-block;
     vertical-align: top;
     margin-bottom: 10%;
     text-align: left;
     float: none;
     position: relative;
-    padding-left: 20px;
     padding-right: 20px;
+}
+
+.missions li.left{
+    margin-right: 5%;
+}
+
+.missions li.right{
+    margin-left: 5%;
 }
 
 .mis-top {
@@ -453,7 +458,6 @@ hr {
     object-fit: cover;
     height: 150px;
     float: right;
-    margin-right: 10%;
 }
 
 .study-branches {
@@ -1702,9 +1706,7 @@ form .user-details .input-box {
         .block-about {
             width: 90%;
         }
-        .block-about .missions{
-            width: 90%;
-        }
+
 
         .how-works h2 {
             margin-bottom: 2rem;
@@ -1922,6 +1924,10 @@ form .user-details .input-box {
                         margin-bottom: 5% !important;
                     }
 
+                    .missions{
+                        width: 95% !important;
+                    }
+
                     header .right {
                         width: 25%;
                         max-width: 30%;
@@ -1951,6 +1957,22 @@ form .user-details .input-box {
 
                     .process .for-text {
                         font-size: 14px;
+                    }
+
+                    .missions li.left {
+                        margin-right: 0;
+                    }
+
+                    .missions li.right {
+                        margin-left: 0;
+                    }
+
+                    .mis-top p {
+                        font-size: 24px !important;
+                    }
+
+                    .mis-bot {
+                        font-size: 18px !important;
                     }
 
                     @media screen and (max-width: 500px) {
@@ -2060,6 +2082,14 @@ form .user-details .input-box {
 
                         .mis-num img{
                             margin-right: auto;
+                        }
+
+                        .mis-top p {
+                            font-size: 16px !important;
+                        }
+
+                        .mis-bot {
+                            font-size: 14px !important;
                         }
 
                         @media screen and (max-width: 420px){
