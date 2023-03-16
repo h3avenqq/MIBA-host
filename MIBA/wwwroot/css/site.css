@@ -415,40 +415,50 @@ hr {
 .missions {
     padding-left: 0;
     margin: auto;
-    margin-left: 6%;
-    width: 100%;
-    max-width: 1200px;
+    width: 85%;
 }
 
 .missions li{
-    width: 50%;
+    width: 45%;
     display: inline-block;
     vertical-align: top;
     margin-bottom: 10%;
     text-align: left;
     float: none;
     position: relative;
-    padding-left: 20px;
     padding-right: 20px;
+}
+
+.missions li.left{
+    margin-right: 5%;
+}
+
+.missions li.right{
+    margin-left: 5%;
 }
 
 .mis-top {
     z-index: 2;
     position: relative;
-    padding-top: 50px;
     margin-bottom: 0;
     margin-left: 0 !important;
+    width: 50%;
+    height: 150px;
+    position: relative;
 }
 
 .mis-bot {
     z-index: 2;
     position: relative;
+    width: 100%;
 }
 
 .mis-top p {
     font-weight: 700 !important;
     font-size: 20px !important;
     line-height: 1.35;
+    position: absolute;
+    bottom: 0;
 }
 
 .mis-num {
@@ -457,7 +467,6 @@ hr {
     line-height: 150px;
     top: 0;
     width: 95% !important;
-    text-align: center;
     font-size: 200px;
     font-family: sans-serif;
     font-weight: 700;
@@ -467,6 +476,7 @@ hr {
 .mis-num img{
     object-fit: cover;
     height: 150px;
+    float: right;
 }
 
 .study-branches {
@@ -1715,9 +1725,7 @@ form .user-details .input-box {
         .block-about {
             width: 90%;
         }
-        .block-about .missions{
-            width: 90%;
-        }
+
 
         .how-works h2 {
             margin-bottom: 2rem;
@@ -1726,6 +1734,13 @@ form .user-details .input-box {
 
         .how-works ul li {
             font-size: 16px;
+        }
+
+        .mis-top p {
+            font-size: 16px !important;
+        }
+        .mis-bot{
+            font-size: 14px !important;
         }
 
         @media screen and (max-width: 960px){
@@ -1928,6 +1943,10 @@ form .user-details .input-box {
                         margin-bottom: 5% !important;
                     }
 
+                    .missions{
+                        width: 95% !important;
+                    }
+
                     header .right {
                         width: 25%;
                         max-width: 30%;
@@ -1948,7 +1967,7 @@ form .user-details .input-box {
                     }
 
                     .missions li{
-                        width: 80%;
+                        width: 100%;
                     }
 
                     .map{
@@ -1957,6 +1976,22 @@ form .user-details .input-box {
 
                     .process .for-text {
                         font-size: 14px;
+                    }
+
+                    .missions li.left {
+                        margin-right: 0;
+                    }
+
+                    .missions li.right {
+                        margin-left: 0;
+                    }
+
+                    .mis-top p {
+                        font-size: 24px !important;
+                    }
+
+                    .mis-bot {
+                        font-size: 18px !important;
                     }
 
                     @media screen and (max-width: 500px) {
@@ -2060,8 +2095,20 @@ form .user-details .input-box {
                             font-size: 25px;
                         }
 
-                        .missions li {
-                            padding-left: 10%;
+                        .missions ul{
+                            width: 97%;
+                        }
+
+                        .mis-num img{
+                            margin-right: auto;
+                        }
+
+                        .mis-top p {
+                            font-size: 16px !important;
+                        }
+
+                        .mis-bot {
+                            font-size: 14px !important;
                         }
 
                         @media screen and (max-width: 420px){
@@ -2111,11 +2158,6 @@ form .user-details .input-box {
                                 width: 350px;
                                 height: 175px;
                                 object-fit: cover;
-                            }
-
-                            .missions .mis-num img {
-                                float: right;
-                                margin-right: 5%;
                             }
 
                             .missions li{
