@@ -91,6 +91,25 @@ body {
     overflow-x: hidden !important;
 }
 
+/*Gradient begin*/
+
+/*.gradient-background_1 {
+    background: linear-gradient(#636363, #f2f9fd);
+    width: 100%;
+}
+
+.gradient-background_2 {
+    background: linear-gradient(#f2f9fd, #53504c);
+    width: 100%;
+}
+
+.gradient-background_3 {
+    background: linear-gradient(#53504c, #f2f9fd);
+    width: 100%;
+}*/
+
+/*Gradient end*/
+
 hr {
     display: block;
     height: 2px;
@@ -230,7 +249,7 @@ hr {
 }
 
 .recomendations {
-    background-color: #fff;
+    /*background-color: #fff;*/
     width: 85%;
     margin:auto;
 }
@@ -323,7 +342,7 @@ hr {
 }
 
 .about {
-    background-color: #fff;
+    /*background-color: #fff;*/
 }
 
 .about .head-of-block{
