@@ -28,7 +28,8 @@ namespace MIBA.Controllers
                 NewCourse = new NewCourse(),
                 Documents = _db.Documents.ToList(),
                 Recs = _db.CourseRecomendations.Include(x => x.Course).ToList(),
-                Sponsors = _db.Sponsors.ToList()
+                Sponsors = _db.Sponsors.ToList(),
+                Missions = _db.Missions.ToList()
             });
         }
 

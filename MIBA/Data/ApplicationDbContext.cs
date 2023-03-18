@@ -32,5 +32,6 @@ namespace MIBA.Data
         public DbSet<Documents> Documents { get; set; }
         public DbSet<CourseRecomendation> CourseRecomendations { get; set; }
         public DbSet<Sponsor> Sponsors { get; set; }
+        public DbSet<Mission> Missions { get; set; }
     }
 }

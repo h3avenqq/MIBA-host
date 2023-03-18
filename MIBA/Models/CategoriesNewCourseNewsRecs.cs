@@ -8,5 +8,6 @@
         public IEnumerable<Documents> Documents { get; set; }
         public IEnumerable<CourseRecomendation> Recs { get; set; }
         public IEnumerable<Sponsor> Sponsors { get; set; }
+        public IList<Mission> Missions { get; set; }
     }
 }

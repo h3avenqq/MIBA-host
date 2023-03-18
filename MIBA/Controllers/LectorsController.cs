@@ -1,11 +1,13 @@
 ﻿using MIBA.Data;
 using MIBA.Models;
 using MIBA.Services.SaveFileService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace MIBA.Controllers
 {
+    [Authorize]
     public class LectorsController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -99,7 +101,7 @@ namespace MIBA.Controllers
                 }
 
                 _db.SaveChanges();
-                TempData["success"] = "Лектор успешно изменена";
+                TempData["success"] = "Лектор успешно изменен";
                 return RedirectToAction("Index");
             }
             return View(request);
@@ -116,7 +118,7 @@ namespace MIBA.Controllers
 
             _db.Lectors.Remove(obj);
             _db.SaveChanges();
-            TempData["success"] = "Лектор успешно удалена";
+            TempData["success"] = "Лектор успешно удален";
 
             return RedirectToAction("Index");
         }

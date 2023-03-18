@@ -151,7 +151,20 @@
             <p>Создание системы опережающего развития с полным спектром услуг и сервисов, отвечающих потребностям химико-технологической отрасли в областях технологических инноваций и кадрового обеспечения химической отрасли</p>
         </div>
         <ul class="missions nav justify-content-center">
-            <li class="left">
+            @for(int i = 0; i < Model.Missions.Count(); i++){
+                <li class=(@i%2 == 0 ? "left" : "right")>
+                        <div class="mis-top">
+                            <p style="text-align: left;">
+                                @Model.Missions[i].Title
+                            </p>
+                        </div>
+                        <div class="mis-bot">
+                            @Model.Missions[i].SubTitle
+                        </div>
+                        <div class="mis-num"><img src=@Model.Missions[i].PhotoUrl /></div>
+                </li>
+            }
+            @*<li class="left">
                     <div class="mis-top">
                         <p style="text-align: left;">
                             ДОПОЛНИТЕЛЬНОЕ<br />
@@ -234,7 +247,7 @@
                         МЕЖДУНАРОДНЫХ
                     </div>
                 <div class="mis-num"><img src="~/media/Missions/collaboration.png" /></div>
-            </li>
+            </li>*@
         </ul>
     </div>
 </div>
